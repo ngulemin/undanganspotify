@@ -1,0 +1,2893 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Raka ♥ Nadira — Our Wedding Playlist | Spotify Wedding Invitation</title>
+  <meta name="description" content="Our Love, Our Favorite Playlist. Undangan pernikahan digital Raka Pratama & Nadira Putri dengan pengalaman visual musik interaktif." />
+  
+  <!-- Open Graph / Social Sharing Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Raka ♥ Nadira — Our Wedding Playlist" />
+  <meta property="og:description" content="Setiap pertemuan memiliki cerita, setiap cerita memiliki melodi, dan kini kami siap memulai babak baru bersama." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" />
+  
+  <!-- Dynamic SVG Favicon (Wedding Music Wave) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231ED760'/%3E%3Cpath d='M18 26c9-4 19-4 28 1M21 34c7-3 15-3 22 1M24 42c5-2 11-2 16 1' stroke='%23121212' stroke-width='4.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans (Circular-inspired geometry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            spotify: {
+              base: '#121212',
+              card: '#181818',
+              elevated: '#242424',
+              highlight: '#2A2A2A',
+              green: '#1ED760',
+              greenHover: '#1FDF64',
+              text: '#FFFFFF',
+              subtext: '#B3B3B3',
+              muted: '#727272'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-base: #121212;
+      --bg-card: #181818;
+      --bg-elevated: #242424;
+      --accent-green: #1ED760;
+      --text-main: #FFFFFF;
+      --text-sub: #B3B3B3;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #090909;
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    /* Hide scrollbar for horizontal carousels while keeping functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Subtle custom scrollbar for desktop main view */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #121212;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2e2e2e;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1ED760;
+    }
+
+    /* Equalizer Bars Animation */
+    @keyframes eqBar1 {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+    @keyframes eqBar2 {
+      0%, 100% { height: 15px; }
+      35% { height: 5px; }
+      70% { height: 18px; }
+    }
+    @keyframes eqBar3 {
+      0%, 100% { height: 8px; }
+      45% { height: 17px; }
+      80% { height: 4px; }
+    }
+    .eq-bar-1 { animation: eqBar1 0.8s ease-in-out infinite; }
+    .eq-bar-2 { animation: eqBar2 0.7s ease-in-out infinite; }
+    .eq-bar-3 { animation: eqBar3 0.9s ease-in-out infinite; }
+    .eq-paused .eq-bar-1,
+    .eq-paused .eq-bar-2,
+    .eq-paused .eq-bar-3 {
+      animation-play-state: paused;
+      height: 4px !important;
+    }
+
+    /* Intro Splash Animations */
+    @keyframes splashLogoPop {
+      0% { opacity: 0; transform: scale(0.82); }
+      50% { opacity: 1; transform: scale(1.04); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes splashPulseRing {
+      0% { transform: scale(0.95); opacity: 0.65; }
+      100% { transform: scale(1.55); opacity: 0; }
+    }
+    .animate-splash-logo {
+      animation: splashLogoPop 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-pulse-ring {
+      animation: splashPulseRing 1.6s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+    }
+
+    /* Custom Range Input (Spotify Progress & Volume Slider) */
+    input[type="range"].spotify-range {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"].spotify-range::-webkit-slider-runnable-track {
+      height: 4px;
+      border-radius: 999px;
+    }
+    input[type="range"].spotify-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      margin-top: -4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    input[type="range"].spotify-range:hover::-webkit-slider-thumb {
+      transform: scale(1.25);
+      background: #1ED760;
+    }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#090909] text-white antialiased selection:bg-[#1ED760] selection:text-black">
+
+  <!-- ===================================================================== -->
+  <!-- KARTU SAPAAN TAMU PEMBUKA (WELCOME GUEST INVITATION CARD)             -->
+  <!-- ===================================================================== -->
+  <div id="welcome-guest-card" class="fixed inset-0 z-[90] bg-[#090909]/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 transition-all duration-700" role="dialog" aria-modal="true" aria-label="Kartu Sapaan Tamu Undangan">
+    <!-- Ambient Spotify Green Glow Behind Card -->
+    <div class="w-80 h-80 bg-[#1ED760]/20 rounded-full blur-3xl absolute pointer-events-none"></div>
+
+    <div class="w-full max-w-sm bg-gradient-to-b from-[#242424] via-[#181818] to-[#121212] border border-white/10 rounded-3xl p-5 sm:p-6 shadow-[0_24px_70px_rgba(0,0,0,0.95)] text-center relative z-10 space-y-5">
+      <!-- Top Brand Pill -->
+      <div class="inline-flex items-center gap-2 bg-black/40 border border-white/10 px-3.5 py-1 rounded-full">
+        <span class="w-4 h-4 rounded-full bg-[#1ED760] text-[#121212] flex items-center justify-center">
+          <svg class="w-2.5 h-2.5" viewBox="0 0 64 64" fill="none">
+            <path d="M14 25C25.5 19.5 38.5 19.5 50 25.5" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <path d="M18 35C27.5 30.5 36.5 30.5 46 35.5" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/>
+            <path d="M23 44.5C29 41.8 35 41.8 41 44.8" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#1ED760]">Spotilove Wedding Pass</span>
+      </div>
+
+      <!-- Couple Album Cover Art -->
+      <div class="relative w-44 h-44 sm:w-48 sm:h-48 mx-auto rounded-2xl overflow-hidden shadow-[0_14px_35px_rgba(0,0,0,0.8)] border border-white/10 group">
+        <img id="welcome-card-cover" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85" alt="Cover Pernikahan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/500x500/181818/1ED760?text=Wedding+Playlist'" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+        <div class="absolute bottom-2.5 inset-x-2.5 flex items-center justify-between text-left">
+          <span class="text-[10px] font-bold uppercase tracking-wider bg-black/65 backdrop-blur-md text-white px-2.5 py-0.5 rounded-full">
+            The Wedding Of
+          </span>
+          <span class="w-6 h-6 rounded-full bg-[#1ED760] text-[#121212] flex items-center justify-center text-xs font-bold shadow">
+            ♪
+          </span>
+        </div>
+      </div>
+
+      <!-- Couple Names & Date -->
+      <div class="space-y-1">
+        <h2 id="welcome-card-couple" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+          Raka <span class="text-[#1ED760]">♥</span> Nadira
+        </h2>
+        <p id="welcome-card-date" class="text-xs font-medium text-[#B3B3B3]">
+          Sabtu, 24 Oktober 2026
+        </p>
+      </div>
+
+      <!-- Kartu Sapaan "Kepada Yth. Nama Tamu" -->
+      <div class="bg-[#121212]/90 border border-[#1ED760]/30 rounded-2xl p-4 space-y-1.5 shadow-inner">
+        <p class="text-[11px] font-semibold uppercase tracking-widest text-[#B3B3B3]">
+          Kepada Yth. Bapak / Ibu / Saudara / i
+        </p>
+        <p id="welcome-card-guest-name" class="text-lg sm:text-xl font-extrabold text-[#1ED760] break-words leading-snug py-0.5">
+          Tamu Undangan
+        </p>
+        <p class="text-[10px] text-[#727272] italic">
+          Mohon maaf apabila terdapat kesalahan penulisan nama atau gelar
+        </p>
+      </div>
+
+      <!-- Primary CTA: Buka Undangan & Putar Musik -->
+      <div class="pt-1 space-y-2">
+        <button id="open-invitation-btn" type="button" onclick="openInvitationFromGuestCard()" class="w-full inline-flex items-center justify-center gap-2.5 bg-[#1ED760] hover:bg-[#1FDF64] text-[#121212] font-extrabold text-sm py-3.5 px-6 rounded-full shadow-[0_8px_25px_rgba(30,215,96,0.4)] hover:scale-[1.02] active:scale-95 transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>Buka Undangan</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN APP CONTAINER (Mobile-first Android App Frame + Desktop Wrapper) -->
+  <!-- ===================================================================== -->
+  <div class="min-h-screen w-full bg-[#090909] flex justify-center">
+    <div id="app-shell" class="w-full max-w-[1140px] mx-auto bg-[#121212] min-h-screen relative pb-44 sm:border-x sm:border-white/[0.06] sm:shadow-[0_0_60px_rgba(0,0,0,0.85)]">
+
+      <!-- Ambient Dynamic Top Gradient (Spotify Android signature header glow) -->
+      <div id="ambient-header-glow" class="absolute top-0 inset-x-0 h-80 bg-gradient-to-b from-[#1db954]/25 via-[#183925]/15 to-transparent pointer-events-none transition-colors duration-700"></div>
+
+      <!-- ================================================================= -->
+      <!-- STICKY TOP BAR: IDENTITY, CATEGORY PILLS & GUEST BADGE            -->
+      <!-- ================================================================= -->
+      <header class="hidden sm:block sticky top-0 z-30 bg-[#121212]/90 backdrop-blur-md border-b border-white/[0.05] px-4 sm:px-8 md:px-12 pt-3 pb-3 transition-all">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <!-- Brand / Logo Left -->
+          <a href="#section-home" onclick="navigateToSection('home', event)" class="flex items-center gap-2.5 group focus:outline-none">
+            <div class="w-8 h-8 rounded-full bg-[#1ED760] flex items-center justify-center shadow-md group-hover:scale-105 transition">
+              <svg class="w-5 h-5 text-[#121212]" viewBox="0 0 64 64" fill="none">
+                <path d="M14 25C25.5 19.5 38.5 19.5 50 25.5" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/>
+                <path d="M18 35C27.5 30.5 36.5 30.5 46 35.5" stroke="currentColor" stroke-width="4.8" stroke-linecap="round"/>
+                <path d="M23 44.5C29 41.8 35 41.8 41 44.8" stroke="currentColor" stroke-width="4.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-extrabold text-sm sm:text-base tracking-tight text-white">Spotilove</span>
+                <span class="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-[#1ED760]/15 text-[#1ED760] border border-[#1ED760]/30">Wedding</span>
+              </div>
+              <p id="header-couple-short" class="text-[11px] text-[#B3B3B3] leading-none mt-0.5">Raka &amp; Nadira</p>
+            </div>
+          </a>
+
+          <!-- Right Actions: Guest Greeting Pill + Sound Toggle -->
+          <div class="flex items-center gap-2">
+            <button id="guest-badge-btn" type="button" onclick="openGuestModal()" class="flex items-center gap-2 bg-[#242424] hover:bg-[#2A2A2A] text-xs font-medium text-white px-3 py-1.5 rounded-full transition border border-white/10" title="Ubah Nama Tamu Undangan">
+              <span class="w-5 h-5 rounded-full bg-[#1ED760] text-[#121212] font-bold flex items-center justify-center text-[11px]" id="guest-avatar-initial">T</span>
+              <span class="truncate max-w-[110px] sm:max-w-[160px]" id="guest-display-name">Tamu Undangan</span>
+            </button>
+
+            <button id="header-mute-btn" type="button" onclick="toggleMuteAudio()" class="w-8 h-8 rounded-full bg-[#242424] hover:bg-[#2A2A2A] flex items-center justify-center text-[#B3B3B3] hover:text-white transition border border-white/10" aria-label="Bisu atau Bunyikan Musik" title="Mute / Unmute">
+              <svg id="header-vol-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills (Android Spotify Top Chips) -->
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-0.5" role="tablist" aria-label="Kategori Bagian Undangan">
+          <button type="button" data-pill="all" onclick="filterByCategory('all')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#1ED760] text-[#121212]">
+            Semua
+          </button>
+          <button type="button" data-pill="mempelai" onclick="filterByCategory('mempelai')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#242424] text-white hover:bg-[#2A2A2A]">
+            Mempelai
+          </button>
+          <button type="button" data-pill="acara" onclick="filterByCategory('acara')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#242424] text-white hover:bg-[#2A2A2A]">
+            Acara
+          </button>
+          <button type="button" data-pill="cerita" onclick="filterByCategory('cerita')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#242424] text-white hover:bg-[#2A2A2A]">
+            Cerita Kami
+          </button>
+          <button type="button" data-pill="galeri" onclick="filterByCategory('galeri')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#242424] text-white hover:bg-[#2A2A2A]">
+            Galeri
+          </button>
+          <button type="button" data-pill="hadiah" onclick="filterByCategory('hadiah')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#242424] text-white hover:bg-[#2A2A2A]">
+            Hadiah &amp; Doa
+          </button>
+        </div>
+      </header>
+
+      <!-- ================================================================= -->
+      <!-- SEARCH & QUICK INDEX PANEL (Toggled via Bottom Nav "Search")      -->
+      <!-- ================================================================= -->
+      <section id="search-panel" class="hidden px-4 sm:px-8 md:px-12 pt-5 pb-8 relative z-10">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-xl font-extrabold tracking-tight">Cari di Undangan</h2>
+          <button type="button" onclick="closeSearchPanel()" class="text-xs font-semibold text-[#1ED760] hover:underline">Tutup Pencarian</button>
+        </div>
+        <div class="relative mb-5">
+          <svg class="w-5 h-5 text-[#121212] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="m21 21-4.3-4.3"/>
+          </svg>
+          <input id="search-input" type="text" placeholder="Cari acara, lokasi, cerita, lagu, atau mempelai..." oninput="handleSearchQuery(this.value)" class="w-full bg-white text-[#121212] placeholder-[#555] font-medium text-sm rounded-lg pl-11 pr-9 py-3 focus:outline-none focus:ring-2 focus:ring-[#1ED760]" />
+          <button id="clear-search-btn" type="button" onclick="clearSearchInput()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-[#121212]/70 hover:text-black font-bold text-sm">✕</button>
+        </div>
+
+        <!-- Search Results Container -->
+        <div id="search-results-list" class="space-y-2 mb-6"></div>
+
+        <!-- Browse All Categories Grid (Spotify Search Tiles) -->
+        <p class="text-xs font-bold uppercase tracking-wider text-[#B3B3B3] mb-3">Jelajahi Bagian Undangan</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <button type="button" onclick="jumpFromSearch('section-hero')" class="bg-gradient-to-br from-emerald-700 to-emerald-900 p-3.5 rounded-lg text-left relative overflow-hidden h-24 hover:scale-[1.01] transition">
+            <span class="font-bold text-sm block">Our Wedding</span>
+            <span class="text-[11px] text-white/80">Playlist Utama</span>
+            <span class="absolute -bottom-2 -right-2 text-3xl opacity-30 rotate-12">💍</span>
+          </button>
+          <button type="button" onclick="jumpFromSearch('section-artists')" class="bg-gradient-to-br from-teal-700 to-slate-900 p-3.5 rounded-lg text-left relative overflow-hidden h-24 hover:scale-[1.01] transition">
+            <span class="font-bold text-sm block">The Artists</span>
+            <span class="text-[11px] text-white/80">Profil Mempelai</span>
+            <span class="absolute -bottom-2 -right-2 text-3xl opacity-30 rotate-12">👫</span>
+          </button>
+          <button type="button" onclick="jumpFromSearch('section-events')" class="bg-gradient-to-br from-amber-700 to-stone-900 p-3.5 rounded-lg text-left relative overflow-hidden h-24 hover:scale-[1.01] transition">
+            <span class="font-bold text-sm block">Akad &amp; Resepsi</span>
+            <span class="text-[11px] text-white/80">Jadwal &amp; Maps</span>
+            <span class="absolute -bottom-2 -right-2 text-3xl opacity-30 rotate-12">📍</span>
+          </button>
+          <button type="button" onclick="jumpFromSearch('section-story')" class="bg-gradient-to-br from-rose-700 to-zinc-900 p-3.5 rounded-lg text-left relative overflow-hidden h-24 hover:scale-[1.01] transition">
+            <span class="font-bold text-sm block">Our Love Story</span>
+            <span class="text-[11px] text-white/80">5 Track Perjalanan</span>
+            <span class="absolute -bottom-2 -right-2 text-3xl opacity-30 rotate-12">🎵</span>
+          </button>
+          <button type="button" onclick="jumpFromSearch('section-gallery')" class="bg-gradient-to-br from-purple-700 to-slate-900 p-3.5 rounded-lg text-left relative overflow-hidden h-24 hover:scale-[1.01] transition">
+            <span class="font-bold text-sm block">Album Gallery</span>
+            <span class="text-[11px] text-white/80">Momen Favorit</span>
+            <span class="absolute -bottom-2 -right-2 text-3xl opacity-30 rotate-12">📸</span>
+          </button>
+          <button type="button" onclick="jumpFromSearch('section-gift')" class="bg-gradient-to-br from-cyan-700 to-zinc-900 p-3.5 rounded-lg text-left relative overflow-hidden h-24 hover:scale-[1.01] transition">
+            <span class="font-bold text-sm block">Send a Gift &amp; Doa</span>
+            <span class="text-[11px] text-white/80">Tanda Kasih &amp; RSVP</span>
+            <span class="absolute -bottom-2 -right-2 text-3xl opacity-30 rotate-12">🎁</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- MAIN CONTENT FLOW                                                 -->
+      <!-- ================================================================= -->
+      <main id="main-content" class="px-4 sm:px-8 md:px-12 pt-4 space-y-10 relative z-10">
+
+        <!-- =============================================================== -->
+        <!-- 3. HALAMAN BERANDA — HOME                                       -->
+        <!-- =============================================================== -->
+        <section id="section-home" data-category="all" class="space-y-5">
+          <!-- Kartu Sapaan Tamu di Beranda (Kepada Yth. Nama Tamu) -->
+          <div class="bg-gradient-to-r from-[#242424] via-[#1c2e22] to-[#181818] border border-[#1ED760]/25 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 shadow-lg">
+            <div class="flex items-center gap-3.5 min-w-0">
+              <div class="w-12 h-12 rounded-xl bg-[#1ED760] text-[#121212] font-extrabold text-lg flex items-center justify-center shrink-0 shadow-md" id="home-guest-avatar">
+                T
+              </div>
+              <div class="min-w-0">
+                <span class="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-widest text-[#1ED760]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#1ED760] animate-pulse"></span>
+                  <span>Special Guest Pass • Kepada Yth.</span>
+                </span>
+                <h2 id="home-personalized-hello" class="text-base sm:text-xl font-extrabold text-white truncate mt-0.5">
+                  Tamu Undangan
+                </h2>
+                <p class="text-[11px] text-[#B3B3B3] truncate">
+                  Terima kasih telah membuka playlist undangan pernikahan kami
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0">
+              <button type="button" onclick="openGuestModal()" class="text-[11px] font-bold bg-black/40 hover:bg-black/70 text-[#B3B3B3] hover:text-white px-3.5 py-2 rounded-full border border-white/10 transition">
+                Buat / Ubah Link Tamu
+              </button>
+            </div>
+          </div>
+
+          <!-- Opening Greeting -->
+          <div class="space-y-1.5">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#1ED760]">
+              Welcome Home
+            </p>
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
+              Our Love, Our Favorite Playlist.
+            </h1>
+            <p class="text-xs sm:text-sm text-[#B3B3B3] leading-relaxed max-w-2xl">
+              Setiap pertemuan memiliki cerita, setiap cerita memiliki melodi, dan kini kami siap memulai babak baru bersama.
+            </p>
+          </div>
+
+          <!-- Spotify Android 2-Column Compact Quick-Access Grid (6 Cards) -->
+          <div id="home-quick-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+            <!-- Populated dynamically from WEDDING_CONFIG.homeCards -->
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 4. HERO SECTION — OUR WEDDING PLAYLIST                          -->
+        <!-- =============================================================== -->
+        <section id="section-hero" data-category="all" class="scroll-mt-24">
+          <div class="bg-gradient-to-b from-[#242424] via-[#181818] to-[#181818] rounded-2xl p-4 sm:p-6 border border-white/[0.07] shadow-2xl overflow-hidden relative">
+            <!-- Subtle decorative ambient radial glow -->
+            <div class="w-64 h-64 bg-[#1ED760]/10 rounded-full blur-3xl absolute -top-20 -right-16 pointer-events-none"></div>
+
+            <div class="flex flex-col md:flex-row gap-5 md:gap-7 items-center md:items-end">
+              <!-- Featured Prewedding Cover Art -->
+              <div class="w-56 h-56 sm:w-64 sm:h-64 shrink-0 rounded-xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.75)] relative group">
+                <img id="hero-cover-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Prewedding Raka & Nadira" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x600/181818/1ED760?text=Our+Wedding'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
+                <div class="absolute top-3 left-3 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full">
+                  <span class="w-2 h-2 rounded-full bg-[#1ED760]"></span>
+                  <span class="text-[10px] font-bold tracking-wider uppercase text-white">Our Wedding Day</span>
+                </div>
+                <button type="button" onclick="playOurStoryAction()" aria-label="Putar Cerita Kami" class="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-[#1ED760] hover:bg-[#1FDF64] text-[#121212] flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition">
+                  <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+
+              <!-- Playlist Header Details -->
+              <div class="flex-1 text-center md:text-left space-y-2.5 w-full">
+                <div class="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                  <span>Featured Wedding Playlist • Our Wedding Day</span>
+                </div>
+
+                <h2 id="hero-couple-names" class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+                  Raka Pratama <span class="text-[#1ED760]">♥</span> Nadira Putri
+                </h2>
+
+                <p id="hero-short-desc" class="text-xs sm:text-sm text-[#B3B3B3] leading-relaxed max-w-xl mx-auto md:mx-0">
+                  Berawal dari satu frekuensi yang sama, kini kami mengundang Anda untuk menjadi saksi harmoni janji suci pernikahan kami.
+                </p>
+
+                <!-- Date & Main Venue Meta Row -->
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1.5 text-xs text-white/90 pt-1">
+                  <span class="inline-flex items-center gap-1.5 font-semibold">
+                    <svg class="w-4 h-4 text-[#1ED760]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    <span id="hero-date-text">Sabtu, 24 Oktober 2026</span>
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 text-[#B3B3B3]">
+                    <svg class="w-4 h-4 text-[#1ED760]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    <span id="hero-venue-text">The Glasshouse Wijaya, Jakarta Selatan</span>
+                  </span>
+                </div>
+
+                <!-- Live Hero Countdown Pills -->
+                <div class="pt-2">
+                  <p id="hero-countdown-status" class="text-[11px] uppercase tracking-wider text-[#B3B3B3] font-semibold mb-2">Menuju Hari Bahagia:</p>
+                  <div class="grid grid-cols-4 gap-2 max-w-xs mx-auto md:mx-0" id="hero-countdown-boxes">
+                    <div class="bg-[#121212]/90 border border-white/10 rounded-lg py-2 px-1 text-center">
+                      <span id="cd-hero-days" class="text-lg sm:text-xl font-extrabold text-[#1ED760] block leading-none">00</span>
+                      <span class="text-[10px] text-[#B3B3B3] uppercase">Hari</span>
+                    </div>
+                    <div class="bg-[#121212]/90 border border-white/10 rounded-lg py-2 px-1 text-center">
+                      <span id="cd-hero-hours" class="text-lg sm:text-xl font-extrabold text-white block leading-none">00</span>
+                      <span class="text-[10px] text-[#B3B3B3] uppercase">Jam</span>
+                    </div>
+                    <div class="bg-[#121212]/90 border border-white/10 rounded-lg py-2 px-1 text-center">
+                      <span id="cd-hero-mins" class="text-lg sm:text-xl font-extrabold text-white block leading-none">00</span>
+                      <span class="text-[10px] text-[#B3B3B3] uppercase">Menit</span>
+                    </div>
+                    <div class="bg-[#121212]/90 border border-white/10 rounded-lg py-2 px-1 text-center">
+                      <span id="cd-hero-secs" class="text-lg sm:text-xl font-extrabold text-white block leading-none">00</span>
+                      <span class="text-[10px] text-[#B3B3B3] uppercase">Detik</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Primary & Secondary CTA Buttons -->
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-3">
+                  <button type="button" onclick="playOurStoryAction()" class="inline-flex items-center gap-2 bg-[#1ED760] hover:bg-[#1FDF64] text-[#121212] font-bold text-xs sm:text-sm px-5 py-3 rounded-full shadow-lg hover:scale-[1.03] active:scale-95 transition">
+                    <span>▶ Putar Cerita Kami</span>
+                  </button>
+                  <button type="button" onclick="scrollToElement('section-events')" class="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white font-semibold text-xs sm:text-sm px-5 py-3 rounded-full border border-white/25 hover:border-white transition">
+                    <span>Lihat Undangan</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 5. FOTO MEMPELAI PRIA DAN WANITA ("The Artists")                -->
+        <!-- =============================================================== -->
+        <section id="section-artists" data-category="mempelai" class="space-y-4 scroll-mt-24">
+          <div class="flex items-end justify-between">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">Featured Duo</span>
+              <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+                The Artists Behind Our Love Story
+              </h2>
+            </div>
+            <span class="text-xs text-[#B3B3B3] hidden sm:inline">Klik kartu untuk detail profil</span>
+          </div>
+
+          <!-- Vertical stack (Groom top, Bride bottom) on smartphone, 2-col grid on desktop -->
+          <div id="artists-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Populated dynamically from WEDDING_CONFIG.couple -->
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 6 & 7. ACARA AKAD NIKAH & RESEPSI PERNIKAHAN                    -->
+        <!-- =============================================================== -->
+        <section id="section-events" data-category="acara" class="space-y-6 scroll-mt-24">
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">Release Schedule • Live Session</span>
+            <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+              Wedding Day Schedule
+            </h2>
+            <p class="text-xs sm:text-sm text-[#B3B3B3]">
+              Simpan jadwal ke kalender Anda dan buka petunjuk arah menuju lokasi acara.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="events-cards-container">
+            <!-- Track 01 (Akad Nikah) & Track 02 (Wedding Reception) rendered via JS from WEDDING_CONFIG.events -->
+          </div>
+
+          <!-- Interactive Countdown Banner in Reception Section -->
+          <div class="bg-[#181818] border border-white/[0.07] rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="space-y-1 text-center sm:text-left">
+              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1ED760]">
+                <span class="w-2 h-2 rounded-full bg-[#1ED760] animate-ping"></span>
+                <span>Countdown Menuju Resepsi</span>
+              </div>
+              <h3 id="reception-countdown-title" class="text-base sm:text-lg font-bold text-white">
+                Kami Menantikan Kehadiran Anda
+              </h3>
+              <p id="reception-countdown-subtitle" class="text-xs text-[#B3B3B3]">
+                Sabtu, 24 Oktober 2026 • Pukul 11.00 WIB — Selesai
+              </p>
+            </div>
+
+            <div id="reception-countdown-grid" class="grid grid-cols-4 gap-2.5 shrink-0">
+              <div class="bg-[#242424] rounded-xl px-3 py-2 text-center min-w-[60px]">
+                <span id="cd-rec-days" class="text-lg font-extrabold text-[#1ED760] block">00</span>
+                <span class="text-[10px] text-[#B3B3B3]">Hari</span>
+              </div>
+              <div class="bg-[#242424] rounded-xl px-3 py-2 text-center min-w-[60px]">
+                <span id="cd-rec-hours" class="text-lg font-extrabold text-white block">00</span>
+                <span class="text-[10px] text-[#B3B3B3]">Jam</span>
+              </div>
+              <div class="bg-[#242424] rounded-xl px-3 py-2 text-center min-w-[60px]">
+                <span id="cd-rec-mins" class="text-lg font-extrabold text-white block">00</span>
+                <span class="text-[10px] text-[#B3B3B3]">Menit</span>
+              </div>
+              <div class="bg-[#242424] rounded-xl px-3 py-2 text-center min-w-[60px]">
+                <span id="cd-rec-secs" class="text-lg font-extrabold text-white block">00</span>
+                <span class="text-[10px] text-[#B3B3B3]">Detik</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 8. CERITA CINTA — OUR LOVE PLAYLIST ("Our Love Story")          -->
+        <!-- =============================================================== -->
+        <section id="section-story" data-category="cerita" class="space-y-4 scroll-mt-24">
+          <div class="bg-[#181818] border border-white/[0.06] rounded-2xl p-4 sm:p-6 space-y-5">
+            <!-- Album Header -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/[0.07] pb-4">
+              <div class="space-y-1">
+                <span class="text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">Story Album • 5 Tracks</span>
+                <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+                  Our Love Story
+                </h2>
+                <p class="text-xs sm:text-sm text-[#B3B3B3]">
+                  “Setiap momen adalah lagu, setiap kenangan adalah melodi.”
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] text-[#B3B3B3] bg-[#242424] px-3 py-1 rounded-full">Klik track untuk membaca kisah</span>
+              </div>
+            </div>
+
+            <!-- Active Story Highlight Card (Changes smoothly when a track is selected) -->
+            <div id="story-spotlight" class="bg-[#242424] rounded-xl p-4 sm:p-5 border border-white/10 transition-all duration-300">
+              <!-- Populated by selectStoryTrack() -->
+            </div>
+
+            <!-- Tracklist Table -->
+            <div id="story-tracklist" class="divide-y divide-white/[0.05]" role="list">
+              <!-- Populated dynamically from WEDDING_CONFIG.loveStory -->
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 9. GALERI — OUR ALBUM COLLECTION ("Our Favorite Moments")       -->
+        <!-- =============================================================== -->
+        <section id="section-gallery" data-category="galeri" class="space-y-4 scroll-mt-24">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">Visual Discography</span>
+              <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+                Our Favorite Moments
+              </h2>
+              <p class="text-xs sm:text-sm text-[#B3B3B3]">
+                Koleksi album prewedding, perjalanan bersama, dan persiapan hari bahagia.
+              </p>
+            </div>
+            <!-- Carousel Scroll Controls for Desktop -->
+            <div class="hidden sm:flex items-center gap-2">
+              <button type="button" onclick="scrollGalleryCarousel(-1)" class="w-8 h-8 rounded-full bg-[#242424] hover:bg-[#2A2A2A] flex items-center justify-center text-white" aria-label="Geser Kiri">‹</button>
+              <button type="button" onclick="scrollGalleryCarousel(1)" class="w-8 h-8 rounded-full bg-[#242424] hover:bg-[#2A2A2A] flex items-center justify-center text-white" aria-label="Geser Kanan">›</button>
+            </div>
+          </div>
+
+          <!-- Horizontal Swipeable Album Cards Carousel -->
+          <div id="gallery-carousel" class="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2">
+            <!-- Populated dynamically from WEDDING_CONFIG.gallery -->
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 12C. WEDDING PLAYLIST SECTION                                   -->
+        <!-- =============================================================== -->
+        <section id="section-playlist" data-category="cerita" class="space-y-4 scroll-mt-24">
+          <div class="bg-[#181818] border border-white/[0.06] rounded-2xl p-4 sm:p-6 space-y-4">
+            <div class="flex items-center justify-between gap-3">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">Official Soundtrack</span>
+                <h2 class="text-lg sm:text-xl font-extrabold text-white">Wedding Playlist</h2>
+                <p class="text-xs text-[#B3B3B3]">Pilih melodi pengiring saat Anda menjelajahi undangan kami.</p>
+              </div>
+              <button type="button" onclick="openNowPlayingModal()" class="text-xs font-semibold text-[#1ED760] hover:underline shrink-0">
+                Buka Pemutar Penuh ↗
+              </button>
+            </div>
+
+            <div id="wedding-playlist-items" class="space-y-2">
+              <!-- Populated dynamically from WEDDING_CONFIG.playlist -->
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 10. HADIAH — SEND A GIFT ("A Little Gift, A Lot of Love")       -->
+        <!-- =============================================================== -->
+        <section id="section-gift" data-category="hadiah" class="space-y-4 scroll-mt-24">
+          <div class="space-y-1.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">Wedding Gift</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+              A Little Gift, A Lot of Love
+            </h2>
+            <p class="text-xs sm:text-sm text-[#B3B3B3] leading-relaxed">
+              Kehadiran dan doa restu Anda merupakan hadiah terindah bagi kami. Apabila berkenan berbagi tanda kasih, berikut informasi yang dapat digunakan.
+            </p>
+          </div>
+
+          <div id="gift-cards-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Populated dynamically from WEDDING_CONFIG.gifts -->
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 11. UCAPAN DAN RSVP — GUESTBOOK ("Leave a Message for Our Love")-->
+        <!-- =============================================================== -->
+        <section id="section-rsvp" data-category="hadiah" class="space-y-5 scroll-mt-24">
+          <div class="bg-[#181818] border border-white/[0.06] rounded-2xl p-4 sm:p-6 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">Guestbook &amp; RSVP</span>
+                <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+                  Leave a Message for Our Love
+                </h2>
+                <p class="text-xs text-[#B3B3B3] mt-0.5">
+                  Konfirmasi kehadiran serta kirimkan doa terbaik untuk perjalanan baru kami.
+                </p>
+              </div>
+            </div>
+
+            <!-- RSVP Summary Counters -->
+            <div class="grid grid-cols-3 gap-2.5 text-center">
+              <div class="bg-[#242424] rounded-xl p-3">
+                <span id="stat-hadir" class="text-lg font-extrabold text-[#1ED760] block">0</span>
+                <span class="text-[11px] text-[#B3B3B3]">Hadir</span>
+              </div>
+              <div class="bg-[#242424] rounded-xl p-3">
+                <span id="stat-belum" class="text-lg font-extrabold text-amber-400 block">0</span>
+                <span class="text-[11px] text-[#B3B3B3]">Belum Pasti</span>
+              </div>
+              <div class="bg-[#242424] rounded-xl p-3">
+                <span id="stat-tidak" class="text-lg font-extrabold text-rose-400 block">0</span>
+                <span class="text-[11px] text-[#B3B3B3]">Tidak Hadir</span>
+              </div>
+            </div>
+
+            <!-- RSVP Form -->
+            <form id="rsvp-form" onsubmit="handleRsvpSubmit(event)" class="space-y-4" novalidate>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="rsvp-name" class="block text-xs font-bold uppercase tracking-wider text-[#B3B3B3] mb-1.5">
+                    Nama Tamu <span class="text-[#1ED760]">*</span>
+                  </label>
+                  <input id="rsvp-name" type="text" required maxlength="60" placeholder="Masukkan nama lengkap Anda" class="w-full bg-[#242424] text-white placeholder-[#727272] text-sm rounded-lg px-3.5 py-2.5 border border-white/10 focus:outline-none focus:border-[#1ED760]" />
+                </div>
+
+                <div>
+                  <label for="rsvp-status" class="block text-xs font-bold uppercase tracking-wider text-[#B3B3B3] mb-1.5">
+                    Konfirmasi Kehadiran <span class="text-[#1ED760]">*</span>
+                  </label>
+                  <select id="rsvp-status" onchange="toggleGuestCountField()" required class="w-full bg-[#242424] text-white text-sm rounded-lg px-3.5 py-2.5 border border-white/10 focus:outline-none focus:border-[#1ED760]">
+                    <option value="Hadir">Hadir</option>
+                    <option value="Belum Pasti">Belum Pasti</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Conditional Guest Count Field -->
+              <div id="rsvp-pax-wrapper">
+                <label for="rsvp-pax" class="block text-xs font-bold uppercase tracking-wider text-[#B3B3B3] mb-1.5">
+                  Jumlah Tamu (Apabila Hadir)
+                </label>
+                <select id="rsvp-pax" class="w-full sm:w-1/2 bg-[#242424] text-white text-sm rounded-lg px-3.5 py-2.5 border border-white/10 focus:outline-none focus:border-[#1ED760]">
+                  <option value="1">1 Orang</option>
+                  <option value="2" selected>2 Orang (Berpasangan)</option>
+                  <option value="3">3 Orang</option>
+                  <option value="4">4 Orang</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="rsvp-message" class="block text-xs font-bold uppercase tracking-wider text-[#B3B3B3] mb-1.5">
+                  Pesan &amp; Doa untuk Kedua Mempelai <span class="text-[#1ED760]">*</span>
+                </label>
+                <textarea id="rsvp-message" rows="3" required maxlength="400" placeholder="Tuliskan ucapan selamat dan doa restu Anda..." class="w-full bg-[#242424] text-white placeholder-[#727272] text-sm rounded-lg px-3.5 py-2.5 border border-white/10 focus:outline-none focus:border-[#1ED760]"></textarea>
+              </div>
+
+              <div id="rsvp-feedback" class="hidden text-xs font-medium px-3.5 py-2.5 rounded-lg"></div>
+
+              <button id="rsvp-submit-btn" type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1ED760] hover:bg-[#1FDF64] text-[#121212] font-bold text-sm px-6 py-3 rounded-full shadow-lg hover:scale-[1.02] active:scale-95 transition">
+                <span>Kirim Ucapan</span>
+              </button>
+            </form>
+
+            <!-- Guestbook Activity Feed -->
+            <div class="pt-2 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-sm font-bold text-white">Feed Ucapan &amp; Doa (<span id="rsvp-total-count">0</span>)</h3>
+                <button type="button" onclick="loadRsvpFromSpreadsheet(true)" class="inline-flex items-center gap-1.5 text-[11px] text-[#B3B3B3] hover:text-[#1ED760] transition" title="Muat ulang data terbaru dari Spreadsheet">
+                  <span id="rsvp-sync-indicator">↻ Sinkronkan Data</span>
+                </button>
+              </div>
+              <div id="rsvp-feed-list" class="space-y-3 max-h-96 overflow-y-auto pr-1">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- 14. FOOTER — END OF OUR PLAYLIST                                -->
+        <!-- =============================================================== -->
+        <footer id="section-footer" class="pt-6 pb-8 border-t border-white/[0.07] text-center space-y-5">
+          <div class="flex flex-col items-center space-y-2">
+            <div class="w-10 h-10 rounded-full bg-[#1ED760] flex items-center justify-center text-[#121212] shadow-md">
+              <svg class="w-6 h-6" viewBox="0 0 64 64" fill="none">
+                <path d="M14 25C25.5 19.5 38.5 19.5 50 25.5" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/>
+                <path d="M18 35C27.5 30.5 36.5 30.5 46 35.5" stroke="currentColor" stroke-width="4.8" stroke-linecap="round"/>
+                <path d="M23 44.5C29 41.8 35 41.8 41 44.8" stroke="currentColor" stroke-width="4.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1ED760]">End of Our Playlist</p>
+            <h3 id="footer-couple-names" class="text-xl font-extrabold text-white">Raka Pratama &amp; Nadira Putri</h3>
+            <p id="footer-wedding-date" class="text-xs text-[#B3B3B3]">Sabtu, 24 Oktober 2026 • Jakarta, Indonesia</p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#B3B3B3] max-w-md mx-auto italic leading-relaxed px-4">
+            “Terima kasih telah menjadi bagian dari cerita kami. Semoga cinta dan kebahagiaan selalu menyertai kita.”
+          </p>
+
+          <!-- Quick Footer Navigation Links -->
+          <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs font-medium text-[#B3B3B3]">
+            <a href="#section-home" onclick="navigateToSection('home', event)" class="hover:text-[#1ED760] transition">Home</a>
+            <a href="#section-artists" onclick="scrollToElement('section-artists'); return false;" class="hover:text-[#1ED760] transition">Mempelai</a>
+            <a href="#section-events" onclick="scrollToElement('section-events'); return false;" class="hover:text-[#1ED760] transition">Akad &amp; Resepsi</a>
+            <a href="#section-story" onclick="scrollToElement('section-story'); return false;" class="hover:text-[#1ED760] transition">Cerita Cinta</a>
+            <a href="#section-gallery" onclick="scrollToElement('section-gallery'); return false;" class="hover:text-[#1ED760] transition">Galeri</a>
+            <a href="#section-gift" onclick="scrollToElement('section-gift'); return false;" class="hover:text-[#1ED760] transition">Hadiah &amp; RSVP</a>
+          </div>
+
+          <!-- Social Media Links -->
+          <div id="footer-socials" class="flex justify-center gap-3">
+            <!-- Populated dynamically -->
+          </div>
+
+          <p class="text-[11px] text-[#727272] pt-2">
+            &copy; <span id="footer-year"></span> Spotilove Digital Wedding Invitation. All Rights Reserved.
+          </p>
+        </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 12A & 13. FIXED ANDROID MINI-PLAYER + BOTTOM NAVIGATION BAR           -->
+  <!-- ===================================================================== -->
+  <div class="fixed bottom-0 inset-x-0 z-40 flex flex-col items-center pointer-events-none">
+    <div class="w-full max-w-[1140px] mx-auto px-2 sm:px-8 md:px-12 pointer-events-auto">
+
+      <!-- 12A. PERMANENT MINI-PLAYER -->
+      <div id="mini-player" class="bg-[#242424] hover:bg-[#2A2A2A] border border-white/10 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.8)] mb-1.5 overflow-hidden transition cursor-pointer" onclick="handleMiniPlayerClick(event)">
+        <div class="flex items-center justify-between px-3 py-2 gap-3">
+          <!-- Left: Cover Thumbnail + Song Info + Equalizer -->
+          <div class="flex items-center gap-3 min-w-0 flex-1">
+            <img id="mini-cover" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=200&q=80" alt="Track Cover" class="w-10 h-10 rounded-md object-cover shrink-0 shadow" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2">
+                <p id="mini-title" class="text-xs sm:text-sm font-bold text-white truncate">Melodi Janji Suci (Opening)</p>
+                <!-- Animated Equalizer Indicator -->
+                <div id="mini-eq" class="flex items-end gap-0.5 h-3.5 shrink-0 eq-paused" title="Status Pemutar">
+                  <span class="w-0.5 bg-[#1ED760] rounded-full eq-bar-1"></span>
+                  <span class="w-0.5 bg-[#1ED760] rounded-full eq-bar-2"></span>
+                  <span class="w-0.5 bg-[#1ED760] rounded-full eq-bar-3"></span>
+                </div>
+              </div>
+              <p id="mini-artist" class="text-[11px] text-[#B3B3B3] truncate">Raka &amp; Nadira • Wedding Acoustic</p>
+            </div>
+          </div>
+
+          <!-- Right: Controls (Prev, Play/Pause, Next) -->
+          <div class="flex items-center gap-1 sm:gap-2 shrink-0" onclick="event.stopPropagation()">
+            <button type="button" onclick="prevTrack()" class="p-2 text-[#B3B3B3] hover:text-white transition hidden sm:inline-flex" aria-label="Lagu Sebelumnya">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+            </button>
+            <button id="mini-play-btn" type="button" onclick="togglePlayPause()" class="w-9 h-9 rounded-full bg-white text-[#121212] hover:scale-105 active:scale-95 flex items-center justify-center transition shadow" aria-label="Putar atau Jeda Musik">
+              <svg id="mini-play-icon" class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button type="button" onclick="nextTrack()" class="p-2 text-[#B3B3B3] hover:text-white transition" aria-label="Lagu Berikutnya">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Thin Spotify Progress Bar at bottom of Mini-Player -->
+        <div class="w-full h-1 bg-white/15 overflow-hidden">
+          <div id="mini-progress-fill" class="h-full bg-[#1ED760] w-0 transition-all duration-150"></div>
+        </div>
+      </div>
+
+      <!-- 13. ANDROID SPOTIFY BOTTOM NAVIGATION BAR -->
+      <nav class="bg-[#121212]/95 backdrop-blur-lg border-t border-white/[0.08] px-2 py-1.5 rounded-t-xl flex items-center justify-around" aria-label="Navigasi Utama Aplikasi">
+        <button type="button" data-nav="home" onclick="handleBottomNav('home')" class="bottom-nav-item flex flex-col items-center justify-center py-1 px-3 text-white transition">
+          <svg class="w-5 h-5 mb-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg>
+          <span class="text-[10px] font-semibold">Home</span>
+        </button>
+
+        <button type="button" data-nav="search" onclick="handleBottomNav('search')" class="bottom-nav-item flex flex-col items-center justify-center py-1 px-3 text-[#B3B3B3] hover:text-white transition">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
+          <span class="text-[10px] font-semibold">Search</span>
+        </button>
+
+        <button type="button" data-nav="library" onclick="handleBottomNav('library')" class="bottom-nav-item flex flex-col items-center justify-center py-1 px-3 text-[#B3B3B3] hover:text-white transition">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6v12M9 6v12M14 6l6 3v9l-6-3V6z"/></svg>
+          <span class="text-[10px] font-semibold">Your Library</span>
+        </button>
+
+        <button type="button" data-nav="wedding" onclick="handleBottomNav('wedding')" class="bottom-nav-item flex flex-col items-center justify-center py-1 px-3 text-[#B3B3B3] hover:text-white transition">
+          <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 11c0 5.65-7 10-7 10z"/></svg>
+          <span class="text-[10px] font-semibold">Wedding Info</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 12B. FULL-SCREEN "NOW PLAYING" SPOTIFY MUSIC PLAYER MODAL             -->
+  <!-- ===================================================================== -->
+  <div id="now-playing-modal" class="fixed inset-0 z-50 hidden bg-gradient-to-b from-[#1f3528] via-[#121212] to-[#090909] flex-col justify-between p-5 sm:p-8 overflow-y-auto" role="dialog" aria-label="Pemutar Musik Penuh">
+    <div class="w-full max-w-md mx-auto flex flex-col justify-between min-h-full space-y-5">
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between">
+        <button type="button" onclick="closeNowPlayingModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white" aria-label="Tutup Pemutar">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-[#B3B3B3]">Playing From Playlist</p>
+          <p class="text-xs font-bold text-white">Our Wedding Day Soundtrack</p>
+        </div>
+        <button type="button" onclick="toggleMuteAudio()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white" aria-label="Mute">
+          <span id="np-mute-label" class="text-[11px] font-bold">🔊</span>
+        </button>
+      </div>
+
+      <!-- Large Cover Art -->
+      <div class="aspect-square w-full max-w-[300px] mx-auto rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-white/10">
+        <img id="np-cover" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85" alt="Now Playing Cover" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Track Title, Artist & Mood Note -->
+      <div class="space-y-1">
+        <div class="flex items-center justify-between gap-3">
+          <div class="min-w-0">
+            <h3 id="np-title" class="text-xl font-extrabold text-white truncate">Melodi Janji Suci (Opening)</h3>
+            <p id="np-artist" class="text-sm text-[#B3B3B3] truncate">Raka &amp; Nadira • Wedding Acoustic</p>
+          </div>
+          <span class="text-[#1ED760] text-xl shrink-0">♥</span>
+        </div>
+        <p id="np-context" class="text-xs text-[#1ED760] pt-1">Lagu saat membuka undangan</p>
+      </div>
+
+      <!-- Interactive Progress Bar + Timestamps -->
+      <div class="space-y-1.5">
+        <input id="np-progress-slider" type="range" min="0" max="100" value="0" oninput="seekAudioByPercentage(this.value)" class="w-full spotify-range bg-white/20 rounded-lg" aria-label="Progress Lagu" />
+        <div class="flex justify-between text-[11px] font-medium text-[#B3B3B3]">
+          <span id="np-current-time">0:00</span>
+          <span id="np-duration">2:45</span>
+        </div>
+      </div>
+
+      <!-- Main Playback Controls: Shuffle, Prev, -10s, Play/Pause, +10s, Next, Repeat -->
+      <div class="flex items-center justify-between">
+        <button id="np-shuffle-btn" type="button" onclick="toggleShuffle()" class="p-2 text-[#B3B3B3] hover:text-white transition" title="Acak Lagu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        </button>
+
+        <button type="button" onclick="prevTrack()" class="p-2 text-white hover:text-[#1ED760] transition" title="Lagu Sebelumnya">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+        </button>
+
+        <button type="button" onclick="skipSeconds(-10)" class="text-xs font-bold text-[#B3B3B3] hover:text-white px-2 py-1 rounded bg-white/5" title="Mundur 10 Detik">
+          -10s
+        </button>
+
+        <button id="np-play-btn" type="button" onclick="togglePlayPause()" class="w-16 h-16 rounded-full bg-[#1ED760] hover:bg-[#1FDF64] text-[#121212] flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition" aria-label="Putar atau Jeda">
+          <svg id="np-play-icon" class="w-8 h-8 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+
+        <button type="button" onclick="skipSeconds(10)" class="text-xs font-bold text-[#B3B3B3] hover:text-white px-2 py-1 rounded bg-white/5" title="Maju 10 Detik">
+          +10s
+        </button>
+
+        <button type="button" onclick="nextTrack()" class="p-2 text-white hover:text-[#1ED760] transition" title="Lagu Berikutnya">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+
+        <button id="np-repeat-btn" type="button" onclick="toggleRepeat()" class="p-2 text-[#1ED760] transition" title="Ulangi Lagu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 1l4 4-4 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+        </button>
+      </div>
+
+      <!-- Volume Control Bar -->
+      <div class="flex items-center gap-3 pt-1">
+        <svg class="w-4 h-4 text-[#B3B3B3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>
+        <input id="np-volume-slider" type="range" min="0" max="100" value="80" oninput="changeVolume(this.value)" class="w-full spotify-range bg-white/20 rounded-lg" aria-label="Volume Musik" />
+        <svg class="w-4 h-4 text-[#B3B3B3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+      </div>
+
+      <!-- Queue / Playlist Selector inside Now Playing -->
+      <div class="bg-black/35 rounded-xl p-3.5 border border-white/10 space-y-2">
+        <p class="text-[11px] font-bold uppercase tracking-wider text-[#1ED760]">Daftar Lagu Pernikahan</p>
+        <div id="np-queue-list" class="space-y-1.5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- LIGHTBOX MODAL FOR GALLERY PHOTOS                                     -->
+  <!-- ===================================================================== -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex-col justify-between p-4 sm:p-6" role="dialog" aria-label="Galeri Foto Penuh">
+    <div class="flex items-center justify-between">
+      <div>
+        <span id="lightbox-category" class="text-[11px] font-bold uppercase tracking-widest text-[#1ED760]">Album Collection</span>
+        <p id="lightbox-counter" class="text-xs text-[#B3B3B3]">1 / 5</p>
+      </div>
+      <button type="button" onclick="closeLightbox()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center font-bold text-lg" aria-label="Tutup Galeri">✕</button>
+    </div>
+
+    <div class="flex-1 flex items-center justify-center relative my-4">
+      <button type="button" onclick="stepLightbox(-1)" class="absolute left-1 sm:left-4 z-10 w-10 h-10 rounded-full bg-black/70 hover:bg-[#1ED760] hover:text-black text-white flex items-center justify-center text-xl font-bold border border-white/15 transition" aria-label="Foto Sebelumnya">‹</button>
+      <img id="lightbox-img" src="" alt="Gallery Zoom" class="max-h-[72vh] max-w-full rounded-xl object-contain shadow-2xl" />
+      <button type="button" onclick="stepLightbox(1)" class="absolute right-1 sm:right-4 z-10 w-10 h-10 rounded-full bg-black/70 hover:bg-[#1ED760] hover:text-black text-white flex items-center justify-center text-xl font-bold border border-white/15 transition" aria-label="Foto Berikutnya">›</button>
+    </div>
+
+    <div class="text-center max-w-lg mx-auto pb-2">
+      <h4 id="lightbox-title" class="text-base font-bold text-white">Judul Foto</h4>
+      <p id="lightbox-caption" class="text-xs text-[#B3B3B3] mt-0.5">Deskripsi momen</p>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- ARTIST PROFILE DETAIL MODAL (GROOM / BRIDE)                           -->
+  <!-- ===================================================================== -->
+  <div id="artist-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto" onclick="closeArtistModal()">
+    <div class="bg-[#181818] border border-white/15 rounded-2xl max-w-xs sm:max-w-sm w-full max-h-[90vh] overflow-y-auto shadow-2xl" onclick="event.stopPropagation()">
+      <div class="relative w-full aspect-[4/5]">
+        <img id="artist-modal-img" src="" alt="Foto Profil Mempelai" class="w-full h-full object-cover object-top" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#181818] via-black/30 to-transparent"></div>
+        <button type="button" onclick="closeArtistModal()" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 text-white hover:bg-black flex items-center justify-center">✕</button>
+        <div class="absolute bottom-3 left-4 right-4">
+          <div class="inline-flex items-center gap-1.5 bg-[#1ED760] text-[#121212] text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full mb-1.5">
+            <span>✓ Verified Artist</span>
+          </div>
+          <h3 id="artist-modal-name" class="text-2xl font-extrabold text-white">Nama Mempelai</h3>
+          <p id="artist-modal-nick" class="text-xs text-[#1ED760] font-semibold">Nama Panggilan</p>
+        </div>
+      </div>
+      <div class="p-5 space-y-3">
+        <p id="artist-modal-parents" class="text-xs font-semibold text-white bg-[#242424] p-3 rounded-lg border border-white/5"></p>
+        <p id="artist-modal-bio" class="text-xs sm:text-sm text-[#B3B3B3] leading-relaxed"></p>
+        <div class="pt-2 flex items-center justify-between">
+          <a id="artist-modal-social" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-[#1ED760] hover:underline">
+            <span>Kunjungi Profil Instagram ↗</span>
+          </a>
+          <button type="button" onclick="closeArtistModal()" class="text-xs font-semibold bg-[#242424] hover:bg-[#2A2A2A] text-white px-4 py-2 rounded-full">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- GUEST NAME PERSONALIZATION MODAL                                      -->
+  <!-- ===================================================================== -->
+  <div id="guest-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm items-center justify-center p-4" onclick="closeGuestModal()">
+    <div class="bg-[#181818] border border-white/15 rounded-2xl max-w-md w-full p-5 space-y-4 shadow-2xl" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-[#1ED760]">URL Parameter Generator</span>
+          <h3 class="text-base font-extrabold text-white">Personalisasi Nama Tamu</h3>
+        </div>
+        <button type="button" onclick="closeGuestModal()" class="w-8 h-8 rounded-full bg-[#242424] text-[#B3B3B3] hover:text-white flex items-center justify-center">✕</button>
+      </div>
+
+      <p class="text-xs text-[#B3B3B3] leading-relaxed">
+        Ketik nama tamu untuk memperbarui kartu sapaan <strong class="text-white">Kepada Yth.</strong> atau salin link undangan otomatis dengan format <code class="text-[#1ED760]">?to=Nama+Tamu</code>.
+      </p>
+
+      <div class="space-y-1.5">
+        <label for="guest-name-input" class="block text-[11px] font-bold uppercase tracking-wider text-[#B3B3B3]">Nama Tamu Undangan</label>
+        <input id="guest-name-input" type="text" maxlength="60" oninput="updateGuestLinkPreview(this.value)" placeholder="Contoh: Tamu Undangan / Budi & Partner" class="w-full bg-[#242424] text-white text-sm rounded-lg px-3.5 py-2.5 border border-white/10 focus:outline-none focus:border-[#1ED760]" />
+      </div>
+
+      <div class="bg-[#121212] border border-white/10 rounded-xl p-3 space-y-1.5">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#B3B3B3] block">Preview Link Undangan:</span>
+        <p id="guest-link-preview" class="text-xs font-mono text-[#1ED760] break-all select-all">
+          ?to=Tamu+Undangan
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-end gap-2 pt-1">
+        <button type="button" onclick="copyPersonalizedGuestLink()" class="text-xs font-bold bg-[#242424] hover:bg-[#2A2A2A] text-white px-4 py-2.5 rounded-full border border-white/15 transition">
+          Salin Link ?to=
+        </button>
+        <button type="button" onclick="saveGuestName()" class="text-xs font-bold bg-[#1ED760] hover:bg-[#1FDF64] text-[#121212] px-5 py-2.5 rounded-full transition">
+          Terapkan Nama
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- GLOBAL TOAST NOTIFICATION                                             -->
+  <!-- ===================================================================== -->
+  <div id="toast-notification" class="fixed top-16 left-1/2 -translate-x-1/2 z-[110] hidden bg-[#1ED760] text-[#121212] font-bold text-xs px-4 py-2.5 rounded-full shadow-2xl items-center gap-2 transition-all">
+    <span id="toast-message">Berhasil disalin!</span>
+  </div>
+
+  <!-- Hidden HTML5 Audio Element (used if external audio URL is configured) -->
+  <audio id="external-audio-element" preload="none"></audio>
+
+  <!-- ===================================================================== -->
+  <!-- 15. CENTRALIZED CONFIGURATION & INTERACTIVE APPLICATION LOGIC         -->
+  <!-- ===================================================================== -->
+  <script>
+    /**
+     * ========================================================================
+     * 15. STRUKTUR DATA TERPUSAT (WEDDING_CONFIG)
+     * Ubah seluruh informasi mempelai, acara, cerita, galeri, hadiah, dan
+     * playlist melalui objek tunggal di bawah ini tanpa menyentuh kode UI.
+     * ========================================================================
+     */
+    const WEDDING_CONFIG = {
+      couple: {
+        groom: {
+          roleLabel: "Verified Groom • The Artist",
+          fullName: "Raka Pratama, S.T.",
+          nickName: "Raka",
+          parents: "Putra Pertama dari Bapak H. Hendra Wijaya & Ibu Hj. Ratna Sari",
+          bio: "",
+          photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+          instagramLabel: "@rakapratama.music",
+          instagramUrl: "https://instagram.com"
+        },
+        bride: {
+          roleLabel: "Verified Bride • The Artist",
+          fullName: "Nadira Putri Maharani, S.Ars.",
+          nickName: "Nadira",
+          parents: "Putri Kedua dari Bapak Drs. Surya Dharma & Ibu Dewi Anggraini",
+          bio: "",
+          photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+          instagramLabel: "@nadiraputri.design",
+          instagramUrl: "https://instagram.com"
+        }
+      },
+
+      weddingMeta: {
+        coupleShortTitle: "Raka ♥ Nadira",
+        playlistSubtitle: "Our Wedding Day",
+        weddingDateDisplay: "Sabtu, 24 Oktober 2026",
+        // Format ISO untuk perhitungan countdown otomatis (WIB / UTC+7)
+        weddingDateISO: "2026-10-24T08:30:00+07:00",
+        receptionDateISO: "2026-10-24T11:00:00+07:00",
+        mainVenueName: "The Glasshouse Wijaya, Jakarta Selatan",
+        heroCoverPhoto: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85",
+        heroDescription: "Berawal dari satu frekuensi yang sama, kini kami mengundang Anda untuk menjadi saksi harmoni janji suci pernikahan kami."
+      },
+
+      // Kartu Pintasan Halaman Beranda (Spotify Home 6-Pack Grid)
+      homeCards: [
+        {
+          id: "card-wedding",
+          title: "Our Wedding",
+          subtitle: "Featured Playlist",
+          targetSection: "section-hero",
+          cover: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=300&q=80"
+        },
+        {
+          id: "card-groom",
+          title: "The Groom",
+          subtitle: "Profil Raka",
+          targetSection: "section-artists",
+          cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+        },
+        {
+          id: "card-bride",
+          title: "The Bride",
+          subtitle: "Profil Nadira",
+          targetSection: "section-artists",
+          cover: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+        },
+        {
+          id: "card-story",
+          title: "Our Love Story",
+          subtitle: "5 Track Perjalanan",
+          targetSection: "section-story",
+          cover: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=300&q=80"
+        },
+        {
+          id: "card-events",
+          title: "Wedding Day",
+          subtitle: "Akad & Resepsi",
+          targetSection: "section-events",
+          cover: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=300&q=80"
+        },
+        {
+          id: "card-moments",
+          title: "Our Favorite Moments",
+          subtitle: "Album Koleksi",
+          targetSection: "section-gallery",
+          cover: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=300&q=80"
+        }
+      ],
+
+      // 6 & 7. Informasi Acara Akad Nikah & Resepsi
+      events: [
+        {
+          id: "akad",
+          trackHeading: "Track 01 — Akad Nikah",
+          badge: "Sacred Vows • Live Acoustic",
+          dayDate: "Sabtu, 24 Oktober 2026",
+          timeRange: "08.30 — 10.00",
+          timezone: "WIB",
+          venueName: "Masjid Agung Al-Azhar (Aula Utama)",
+          address: "Jl. Sisingamangaraja No.1, Kebayoran Baru, Jakarta Selatan 12110",
+          description: "",
+          cover: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80",
+          mapsUrl: "https://maps.google.com/?q=Masjid+Agung+Al-Azhar+Jakarta+Selatan",
+          calendarStart: "20261024T013000Z",
+          calendarEnd: "20261024T030000Z"
+        },
+        {
+          id: "resepsi",
+          trackHeading: "Track 02 — Wedding Reception",
+          badge: "Main Concert • Celebration Night",
+          dayDate: "Sabtu, 24 Oktober 2026",
+          timeRange: "11.00 — 14.00",
+          timezone: "WIB",
+          venueName: "The Glasshouse Wijaya Grand Ballroom",
+          address: "Jl. Wijaya II No. 88, Kebayoran Baru, Jakarta Selatan 12160",
+          description: "",
+          cover: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=700&q=80",
+          mapsUrl: "https://maps.google.com/?q=Wijaya+Kebayoran+Baru+Jakarta+Selatan",
+          calendarStart: "20261024T040000Z",
+          calendarEnd: "20261024T070000Z"
+        }
+      ],
+
+      // 8. Cerita Cinta (Contoh template naratif yang siap diganti kisah nyata pasangan)
+      loveStory: [
+        {
+          trackNo: "01",
+          title: "Track 01 — The First Meeting",
+          period: "Musim Hujan • 2022",
+          duration: "3:12",
+          narrative: "Pertemuan pertama yang berawal dari sapaan sederhana di sebuah acara pameran desain dan musik independen. Sebuah percakapan singkat yang meninggalkan kesan mendalam.",
+          photo: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=80",
+          playlistIndex: 0
+        },
+        {
+          trackNo: "02",
+          title: "Track 02 — Getting to Know You",
+          period: "Pertengahan • 2023",
+          duration: "3:45",
+          narrative: "Berbagi daftar lagu favorit di perjalanan pulang dan bertukar cerita tentang mimpi masa depan. Dari lagu-lagu itulah kami menyadari banyak kesamaan nilai hidup.",
+          photo: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=700&q=80",
+          playlistIndex: 1
+        },
+        {
+          trackNo: "03",
+          title: "Track 03 — A Special Connection",
+          period: "Awal Tahun • 2024",
+          duration: "4:02",
+          narrative: "Melewati berbagai dinamika pekerjaan dan jarak dengan saling mendukung. Setiap tantangan justru mempererat harmoni dan rasa saling percaya di antara kami.",
+          photo: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80",
+          playlistIndex: 1
+        },
+        {
+          trackNo: "04",
+          title: "Track 04 — The Promise",
+          period: "Desember • 2025",
+          duration: "3:50",
+          narrative: "Di hadapan kedua keluarga besar, sebuah niat baik disampaikan secara resmi untuk melangkah ke jenjang pernikahan dan menyatukan dua keluarga.",
+          photo: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=700&q=80",
+          playlistIndex: 2
+        },
+        {
+          trackNo: "05",
+          title: "Track 05 — Forever Begins",
+          period: "Oktober • 2026",
+          duration: "4:24",
+          narrative: "Kini tibalah saatnya kami merilis babak baru yang sesungguhnya. Bersama doa restu orang tua dan sahabat, melodi cinta ini siap mengalun selamanya.",
+          photo: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80",
+          playlistIndex: 3
+        }
+      ],
+
+      // 9. Galeri Album Koleksi
+      gallery: [
+        {
+          category: "Prewedding",
+          title: "Golden Hour Acoustic",
+          caption: "Sesi foto prewedding bernuansa hangat menjelang matahari terbenam.",
+          image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          category: "Perjalanan Bersama",
+          title: "City Lights & Coffee",
+          caption: "Menikmati sore hari bersama di sudut kota yang penuh kenangan.",
+          image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          category: "Momen Spesial",
+          title: "The Engagement Day",
+          caption: "Momen pertunangan hangat bersama kedua keluarga tercinta.",
+          image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          category: "Persiapan Pernikahan",
+          title: "Counting the Days",
+          caption: "Merangkai setiap detail hari bahagia dengan penuh syukur.",
+          image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85"
+        },
+        {
+          category: "Dokumentasi Pasangan",
+          title: "Two Souls, One Rhythm",
+          caption: "Potret kebersamaan menyongsong lembaran hidup yang baru.",
+          image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85"
+        }
+      ],
+
+      // 10. Data Hadiah
+      gifts: [
+        {
+          type: "Transfer Bank",
+          badge: "Bank Transfer (Template)",
+          serviceName: "Bank BCA (Contoh Konfigurasi)",
+          accountNumber: "0000-0000-0000",
+          holderName: "[Nama Pemilik Rekening Mempelai]",
+          buttonLabel: "Salin Nomor Rekening"
+        },
+        {
+          type: "E-Wallet",
+          badge: "Digital Wallet (Template)",
+          serviceName: "GoPay / OVO / DANA (Contoh Konfigurasi)",
+          accountNumber: "0800-0000-0000",
+          holderName: "[Nama Akun E-Wallet Mempelai]",
+          buttonLabel: "Salin Nomor"
+        },
+        {
+          type: "Kado Fisik",
+          badge: "Delivery Address (Template)",
+          serviceName: "Pengiriman Kado Pernikahan",
+          accountNumber: "Jl. Contoh Alamat Kediaman Mempelai No. 10, Jakarta Selatan 12160",
+          holderName: "Penerima: [Nama Mempelai Pria / Wanita]",
+          buttonLabel: "Salin Alamat"
+        },
+        {
+          type: "QRIS",
+          badge: "QRIS Code (Opsional)",
+          serviceName: "Scan QRIS Tanda Kasih",
+          accountNumber: "QRIS-TEMPLATE-RAKA-NADIRA",
+          holderName: "",
+          buttonLabel: "Salin ID Referensi",
+          qrisImage: "https://placehold.co/320x320/181818/1ED760?text=QRIS+PLACEHOLDER%0A(Siap+Diganti+QR+Asli)"
+        }
+      ],
+
+      // 12C. Wedding Playlist (Bebas hak cipta menggunakan Web Audio Romantic Piano/Acoustic Synthesizer + opsional audioUrl)
+      playlist: [
+        {
+          id: "track-opening",
+          title: "Melodi Janji Suci (Opening)",
+          artist: "Raka & Nadira • Acoustic Ensemble",
+          contextLabel: "Lagu saat membuka undangan",
+          durationSeconds: 165,
+          durationFormatted: "2:45",
+          cover: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80",
+          audioUrl: "", // Kosongkan untuk memakai synthesizer akustik bawaan berlisensi bebas, atau isi URL MP3 milik sendiri
+          notes: [261.63, 329.63, 392.00, 523.25, 392.00, 329.63, 293.66, 349.23, 440.00, 587.33]
+        },
+        {
+          id: "track-story",
+          title: "Serenade Dua Hati",
+          artist: "Raka & Nadira • Piano Romance",
+          contextLabel: "Lagu romantis untuk cerita cinta",
+          durationSeconds: 192,
+          durationFormatted: "3:12",
+          cover: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=400&q=80",
+          audioUrl: "",
+          notes: [293.66, 369.99, 440.00, 587.33, 440.00, 369.99, 329.63, 392.00, 493.88, 659.25]
+        },
+        {
+          id: "track-gallery",
+          title: "Potret Senja Bersama",
+          artist: "Raka & Nadira • Warm Strings",
+          contextLabel: "Lagu saat melihat galeri",
+          durationSeconds: 178,
+          durationFormatted: "2:58",
+          cover: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=80",
+          audioUrl: "",
+          notes: [220.00, 261.63, 329.63, 440.00, 329.63, 261.63, 246.94, 293.66, 392.00, 493.88]
+        },
+        {
+          id: "track-main",
+          title: "Forever Begins Today",
+          artist: "Raka & Nadira • Wedding Orchestra",
+          contextLabel: "Lagu untuk mengiringi halaman utama",
+          durationSeconds: 210,
+          durationFormatted: "3:30",
+          cover: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=400&q=80",
+          audioUrl: "",
+          notes: [349.23, 440.00, 523.25, 698.46, 523.25, 440.00, 392.00, 493.88, 587.33, 783.99]
+        }
+      ],
+
+      socials: [
+        { label: "Instagram Raka", url: "https://instagram.com" },
+        { label: "Instagram Nadira", url: "https://instagram.com" }
+      ],
+
+      // Konfigurasi Google Apps Script Web App URL untuk Database Spreadsheet RSVP
+      rsvpConfig: {
+        // Tempelkan URL Web App Google Apps Script Anda (berakhiran /exec) pada backendEndpoint di bawah ini:
+        backendEndpoint: "https://script.google.com/macros/s/AKfycbx2XPJgeAkAjY9jfTGDzkbB575QM9o8dzictTYF4T2Gv-Z25w0V6EM5G9Or5HbDaidh/exec",
+        // Interval sinkronisasi otomatis (ms) agar baris yang dihapus di Spreadsheet langsung hilang di website
+        autoSyncIntervalMs: 15000,
+        initialMessages: []
+      }
+    };
+
+    // ========================================================================
+    // APPLICATION STATE
+    // ========================================================================
+    let hasOpenedWelcomeCard = false;
+    let activeStoryIndex = 0;
+    let activeLightboxIndex = 0;
+    let rsvpMessages = [...WEDDING_CONFIG.rsvpConfig.initialMessages];
+    let isFetchingRsvp = false;
+    let lastRsvpSubmitTimestamp = 0;
+    let currentGuestName = "Tamu Undangan";
+
+    // Music Player State
+    let currentTrackIndex = 0;
+    let isPlaying = false;
+    let isMuted = false;
+    let isShuffle = false;
+    let isRepeat = true;
+    let currentVolume = 0.8;
+    let currentElapsedSeconds = 0;
+    let playbackInterval = null;
+
+    // Web Audio API Synthesizer Nodes (for royalty-free romantic melody playback)
+    let audioCtx = null;
+    let masterGainNode = null;
+    let noteStepCounter = 0;
+    let noteScheduleTimer = null;
+
+    // ========================================================================
+    // GUEST PERSONALIZATION (?to=Tamu+Undangan) & WELCOME CARD
+    // ========================================================================
+    function initGuestFromUrl() {
+      try {
+        // 1. Cek query string utama (?to=Tamu+Undangan, ?kepada=..., ?guest=..., ?nama=...)
+        const params = new URLSearchParams(window.location.search);
+        let rawGuest =
+          params.get("to") ||
+          params.get("kepada") ||
+          params.get("guest") ||
+          params.get("nama");
+
+        // 2. Fallback apabila parameter diletakkan setelah hash (misal: #?to=Tamu+Undangan)
+        if (!rawGuest && window.location.hash.includes("?")) {
+          const hashQuery = window.location.hash.split("?")[1];
+          const hashParams = new URLSearchParams(hashQuery);
+          rawGuest =
+            hashParams.get("to") ||
+            hashParams.get("kepada") ||
+            hashParams.get("guest") ||
+            hashParams.get("nama");
+        }
+
+        if (rawGuest && rawGuest.trim().length > 0) {
+          // URLSearchParams otomatis menerjemahkan '+' menjadi spasi dan '%20' menjadi karakter asli
+          currentGuestName = rawGuest.replace(/\+/g, " ").trim();
+        }
+      } catch (e) {
+        // Ignore URL parsing issues
+      }
+      applyGuestNameUI();
+    }
+
+    function applyGuestNameUI() {
+      const displayEl = document.getElementById("guest-display-name");
+      const initialEl = document.getElementById("guest-avatar-initial");
+      const homeAvatarEl = document.getElementById("home-guest-avatar");
+      const helloEl = document.getElementById("home-personalized-hello");
+      const welcomeCardGuestEl = document.getElementById("welcome-card-guest-name");
+      const rsvpNameInput = document.getElementById("rsvp-name");
+
+      const cleanName = currentGuestName || "Tamu Undangan";
+      const firstChar = cleanName.charAt(0).toUpperCase() || "T";
+
+      if (displayEl) displayEl.textContent = cleanName;
+      if (initialEl) initialEl.textContent = firstChar;
+      if (homeAvatarEl) homeAvatarEl.textContent = firstChar;
+      if (helloEl) helloEl.textContent = cleanName;
+      if (welcomeCardGuestEl) welcomeCardGuestEl.textContent = cleanName;
+
+      // Isi otomatis kolom Nama Tamu pada form RSVP jika berasal dari parameter ?to=
+      if (rsvpNameInput && cleanName !== "Tamu Undangan") {
+        rsvpNameInput.value = cleanName;
+      }
+    }
+
+    function openInvitationFromGuestCard() {
+      if (hasOpenedWelcomeCard) return;
+      hasOpenedWelcomeCard = true;
+
+      const card = document.getElementById("welcome-guest-card");
+      if (card) {
+        card.classList.add("opacity-0", "scale-95", "pointer-events-none");
+        setTimeout(() => {
+          card.style.display = "none";
+        }, 650);
+      }
+
+      // Mulai memutar musik pernikahan otomatis setelah tamu menekan tombol "Buka Undangan"
+      if (!isPlaying) {
+        startPlayback(0);
+      }
+      showToast(`Selamat datang, ${currentGuestName} ♥`);
+    }
+
+    function buildGuestUrl(guestName) {
+      const nameToEncode = (guestName || "").trim() || "Tamu Undangan";
+      const encoded = encodeURIComponent(nameToEncode).replace(/%20/g, "+");
+      const baseUrl = window.location.origin + window.location.pathname;
+      return `${baseUrl}?to=${encoded}`;
+    }
+
+    function updateGuestLinkPreview(val) {
+      const previewEl = document.getElementById("guest-link-preview");
+      if (!previewEl) return;
+      previewEl.textContent = buildGuestUrl(val);
+    }
+
+    function copyPersonalizedGuestLink() {
+      const input = document.getElementById("guest-name-input");
+      const guestName = input ? input.value.trim() : currentGuestName;
+      if (guestName.length > 0) {
+        currentGuestName = guestName;
+        applyGuestNameUI();
+      }
+      const fullUrl = buildGuestUrl(currentGuestName);
+      copyTextToClipboard(fullUrl, `Link undangan untuk "${currentGuestName}" berhasil disalin!`);
+    }
+
+    function openGuestModal() {
+      const modal = document.getElementById("guest-modal");
+      const input = document.getElementById("guest-name-input");
+      if (input) {
+        input.value = currentGuestName === "Tamu Undangan" ? "" : currentGuestName;
+        updateGuestLinkPreview(input.value || "Tamu Undangan");
+      }
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeGuestModal() {
+      const modal = document.getElementById("guest-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function saveGuestName() {
+      const input = document.getElementById("guest-name-input");
+      const val = input.value.trim();
+      currentGuestName = val.length > 0 ? val : "Tamu Undangan";
+      applyGuestNameUI();
+      closeGuestModal();
+      showToast(`Sapaan diperbarui: Kepada Yth. ${currentGuestName}`);
+    }
+
+    // ========================================================================
+    // RENDER STATIC METADATA FROM WEDDING_CONFIG
+    // ========================================================================
+    function renderStaticMetadata() {
+      const { groom, bride } = WEDDING_CONFIG.couple;
+      const meta = WEDDING_CONFIG.weddingMeta;
+
+      document.getElementById("welcome-card-cover").src = meta.heroCoverPhoto;
+      document.getElementById("welcome-card-couple").innerHTML = `${groom.nickName} <span class="text-[#1ED760]">♥</span> ${bride.nickName}`;
+      document.getElementById("welcome-card-date").textContent = `${meta.weddingDateDisplay} • ${meta.mainVenueName}`;
+      document.getElementById("header-couple-short").textContent = `${groom.nickName} & ${bride.nickName}`;
+      document.getElementById("hero-cover-img").src = meta.heroCoverPhoto;
+      document.getElementById("hero-couple-names").innerHTML = `${groom.nickName} <span class="text-[#1ED760]">♥</span> ${bride.nickName}`;
+      document.getElementById("hero-short-desc").textContent = meta.heroDescription;
+      document.getElementById("hero-date-text").textContent = meta.weddingDateDisplay;
+      document.getElementById("hero-venue-text").textContent = meta.mainVenueName;
+
+      document.getElementById("footer-couple-names").textContent = `${groom.fullName} & ${bride.fullName}`;
+      document.getElementById("footer-wedding-date").textContent = `${meta.weddingDateDisplay} • ${meta.mainVenueName}`;
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+      // Render Footer Socials
+      const socialsContainer = document.getElementById("footer-socials");
+      socialsContainer.innerHTML = WEDDING_CONFIG.socials.map(s => `
+        <a href="${s.url}" ${s.url.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} class="text-xs bg-[#181818] hover:bg-[#242424] text-[#B3B3B3] hover:text-white px-3.5 py-1.5 rounded-full border border-white/10 transition">
+          ${s.label}
+        </a>
+      `).join("");
+    }
+
+    // ========================================================================
+    // 3. RENDER HOME QUICK-ACCESS 6-PACK PLAYLIST CARDS
+    // ========================================================================
+    function renderHomeQuickCards() {
+      const grid = document.getElementById("home-quick-grid");
+      grid.innerHTML = WEDDING_CONFIG.homeCards.map(card => `
+        <button type="button" onclick="scrollToElement('${card.targetSection}')" class="group bg-[#181818] hover:bg-[#242424] active:scale-[0.99] transition rounded-lg overflow-hidden flex items-center text-left border border-white/[0.05] shadow-sm">
+          <img src="${card.cover}" alt="${card.title}" class="w-14 h-14 sm:w-16 sm:h-16 object-cover shrink-0" onerror="this.src='https://placehold.co/160x160/242424/1ED760?text=Music'" />
+          <div class="px-3 py-1.5 min-w-0 flex-1">
+            <p class="text-xs sm:text-sm font-bold text-white truncate group-hover:text-[#1ED760] transition">${card.title}</p>
+            <p class="text-[11px] text-[#B3B3B3] truncate">${card.subtitle}</p>
+          </div>
+          <div class="pr-3 opacity-0 group-hover:opacity-100 transition hidden sm:block">
+            <span class="w-7 h-7 rounded-full bg-[#1ED760] text-[#121212] flex items-center justify-center shadow">
+              <svg class="w-3.5 h-3.5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
+        </button>
+      `).join("");
+    }
+
+    // ========================================================================
+    // 5. RENDER GROOM & BRIDE ARTIST PROFILE CARDS
+    // ========================================================================
+    function renderArtistsSection() {
+      const container = document.getElementById("artists-container");
+      const profiles = [
+        { key: "groom", data: WEDDING_CONFIG.couple.groom },
+        { key: "bride", data: WEDDING_CONFIG.couple.bride }
+      ];
+
+      container.innerHTML = profiles.map(({ key, data }) => `
+        <article onclick="openArtistModal('${key}')" class="w-full bg-[#181818] hover:bg-[#242424] transition duration-300 rounded-2xl p-4 sm:p-5 border border-white/[0.06] cursor-pointer group flex flex-col justify-between">
+          <div>
+            <!-- Portrait Cover Image without cropping faces excessively -->
+            <div class="relative aspect-[4/4.3] w-full rounded-xl overflow-hidden mb-4 bg-[#242424] shadow-lg">
+              <img src="${data.photo}" alt="${data.fullName}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x650/242424/1ED760?text=${encodeURIComponent(data.nickName)}'" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"></div>
+              <span class="absolute top-3 left-3 bg-black/65 backdrop-blur-md text-[#1ED760] text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                ✓ ${data.roleLabel}
+              </span>
+              <span class="absolute bottom-3 right-3 w-11 h-11 rounded-full bg-[#1ED760] text-[#121212] flex items-center justify-center shadow-xl group-hover:scale-110 transition">
+                <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-[#1ED760]">Panggilan: ${data.nickName}</span>
+                <span class="text-[11px] text-[#B3B3B3]">Ketuk untuk detail</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-extrabold text-white">${data.fullName}</h3>
+              <p class="text-xs font-medium text-white/90 bg-[#242424] p-2.5 rounded-lg border border-white/5">
+                ${data.parents}
+              </p>
+              ${data.bio ? `<p class="text-xs text-[#B3B3B3] leading-relaxed pt-1">${data.bio}</p>` : ''}
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-white/[0.06] flex items-center justify-between">
+            <a href="${data.instagramUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B3B3B3] hover:text-[#1ED760] transition">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25zM12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+              <span>${data.instagramLabel}</span>
+            </a>
+            <span class="text-[11px] font-bold text-[#1ED760]">Lihat Profil →</span>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function openArtistModal(key) {
+      const person = WEDDING_CONFIG.couple[key];
+      if (!person) return;
+      document.getElementById("artist-modal-img").src = person.photo;
+      document.getElementById("artist-modal-name").textContent = person.fullName;
+      document.getElementById("artist-modal-nick").textContent = `Nama Panggilan: ${person.nickName}`;
+      document.getElementById("artist-modal-parents").textContent = person.parents;
+      const bioEl = document.getElementById("artist-modal-bio");
+      if (person.bio && person.bio.trim().length > 0) {
+        bioEl.textContent = person.bio;
+        bioEl.classList.remove("hidden");
+      } else {
+        bioEl.textContent = "";
+        bioEl.classList.add("hidden");
+      }
+      const socialEl = document.getElementById("artist-modal-social");
+      socialEl.href = person.instagramUrl;
+      socialEl.textContent = `Instagram ${person.instagramLabel} ↗`;
+
+      const modal = document.getElementById("artist-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeArtistModal() {
+      const modal = document.getElementById("artist-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    // ========================================================================
+    // 6 & 7. RENDER AKAD NIKAH & WEDDING RECEPTION TRACK CARDS
+    // ========================================================================
+    function renderEventsSection() {
+      const container = document.getElementById("events-cards-container");
+      container.innerHTML = WEDDING_CONFIG.events.map((ev, idx) => `
+        <article class="bg-[#181818] border border-white/[0.07] rounded-2xl overflow-hidden flex flex-col justify-between shadow-lg">
+          <div>
+            <!-- Event Cover Banner -->
+            <div class="relative h-44 w-full overflow-hidden">
+              <img src="${ev.cover}" alt="${ev.trackHeading}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/700x400/242424/1ED760?text=${encodeURIComponent(ev.trackHeading)}'" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#181818] via-black/40 to-transparent"></div>
+              <span class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-[#1ED760] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                ${ev.badge}
+              </span>
+              <div class="absolute bottom-3 left-4 right-4">
+                <h3 class="text-lg sm:text-xl font-extrabold text-white">${ev.trackHeading}</h3>
+              </div>
+            </div>
+
+            <!-- Event Metadata Details -->
+            <div class="p-4 sm:p-5 space-y-3.5">
+              <div class="space-y-2 text-xs sm:text-sm">
+                <div class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-[#1ED760] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  <div>
+                    <p class="font-bold text-white">${ev.dayDate}</p>
+                    <p class="text-xs text-[#B3B3B3]">Pukul ${ev.timeRange} ${ev.timezone}</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-[#1ED760] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  <div>
+                    <p class="font-bold text-white">${ev.venueName}</p>
+                    <p class="text-xs text-[#B3B3B3] leading-relaxed">${ev.address}</p>
+                  </div>
+                </div>
+              </div>
+
+              ${ev.description ? `
+                <p class="text-xs text-[#B3B3B3] bg-[#242424] p-3 rounded-xl border border-white/5 leading-relaxed">
+                  ${ev.description}
+                </p>
+              ` : ''}
+            </div>
+          </div>
+
+          <!-- Action Buttons: Google Maps & Save to Calendar -->
+          <div class="px-4 sm:px-5 pb-5 pt-1 flex flex-wrap gap-2">
+            <a href="${ev.mapsUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#1ED760] hover:bg-[#1FDF64] text-[#121212] font-bold text-xs px-3.5 py-2.5 rounded-full transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>Lihat Lokasi</span>
+            </a>
+
+            <button type="button" onclick="saveEventToCalendar(${idx})" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#242424] hover:bg-[#2A2A2A] text-white font-semibold text-xs px-3.5 py-2.5 rounded-full border border-white/10 transition">
+              <svg class="w-3.5 h-3.5 text-[#1ED760]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              <span>Simpan ke Kalender</span>
+            </button>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function saveEventToCalendar(eventIdx) {
+      const ev = WEDDING_CONFIG.events[eventIdx];
+      if (!ev) return;
+      const { groom, bride } = WEDDING_CONFIG.couple;
+      const title = encodeURIComponent(`${ev.trackHeading} - ${groom.nickName} & ${bride.nickName}`);
+      const detailsText = ev.description ? `${ev.description}\nLokasi: ${ev.venueName}, ${ev.address}` : `Lokasi: ${ev.venueName}, ${ev.address}`;
+      const details = encodeURIComponent(detailsText);
+      const location = encodeURIComponent(`${ev.venueName}, ${ev.address}`);
+      const dates = `${ev.calendarStart}/${ev.calendarEnd}`;
+      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
+      window.open(gcalUrl, "_blank", "noopener,noreferrer");
+      showToast(`Membuka Google Calendar untuk ${ev.trackHeading}`);
+    }
+
+    async function shareEventInfo(eventIdx) {
+      const ev = WEDDING_CONFIG.events[eventIdx];
+      if (!ev) return;
+      const { groom, bride } = WEDDING_CONFIG.couple;
+      const shareText = `${ev.trackHeading} (${groom.nickName} ♥ ${bride.nickName})\n📅 ${ev.dayDate}\n⏰ ${ev.timeRange} ${ev.timezone}\n📍 ${ev.venueName} — ${ev.address}\nMaps: ${ev.mapsUrl}`;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: `${ev.trackHeading} — ${groom.nickName} & ${bride.nickName}`,
+            text: shareText,
+            url: window.location.href
+          });
+          return;
+        } catch (err) {
+          // Fallback to clipboard copy if user cancels share sheet
+        }
+      }
+      copyTextToClipboard(shareText, "Informasi acara berhasil disalin ke clipboard!");
+    }
+
+    // ========================================================================
+    // REAL-TIME COUNTDOWN TIMER
+    // ========================================================================
+    function startCountdownTimer() {
+      const updateTimer = () => {
+        const now = new Date().getTime();
+        const target = new Date(WEDDING_CONFIG.weddingMeta.receptionDateISO).getTime();
+        const diff = target - now;
+
+        if (diff <= 0) {
+          // Event has passed: show warm thank-you message
+          const heroStatus = document.getElementById("hero-countdown-status");
+          const recTitle = document.getElementById("reception-countdown-title");
+          const recSub = document.getElementById("reception-countdown-subtitle");
+          if (heroStatus) heroStatus.textContent = "Terima kasih atas doa restu & kehadiran Anda di hari bahagia kami ♥";
+          if (recTitle) recTitle.textContent = "Acara Telah Berlangsung dengan Penuh Kebahagiaan";
+          if (recSub) recSub.textContent = "Terima kasih kepada seluruh keluarga dan sahabat yang telah hadir dan mendoakan kami.";
+          ["days", "hours", "mins", "secs"].forEach(unit => {
+            const hEl = document.getElementById(`cd-hero-${unit}`);
+            const rEl = document.getElementById(`cd-rec-${unit}`);
+            if (hEl) hEl.textContent = "00";
+            if (rEl) rEl.textContent = "00";
+          });
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const pad = n => String(n).padStart(2, "0");
+        document.getElementById("cd-hero-days").textContent = pad(days);
+        document.getElementById("cd-hero-hours").textContent = pad(hours);
+        document.getElementById("cd-hero-mins").textContent = pad(mins);
+        document.getElementById("cd-hero-secs").textContent = pad(secs);
+
+        document.getElementById("cd-rec-days").textContent = pad(days);
+        document.getElementById("cd-rec-hours").textContent = pad(hours);
+        document.getElementById("cd-rec-mins").textContent = pad(mins);
+        document.getElementById("cd-rec-secs").textContent = pad(secs);
+      };
+
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    }
+
+    // ========================================================================
+    // 8. LOVE STORY ALBUM TRACKLIST & INTERACTIVE SPOTLIGHT
+    // ========================================================================
+    function renderLoveStorySection() {
+      const listEl = document.getElementById("story-tracklist");
+      listEl.innerHTML = WEDDING_CONFIG.loveStory.map((item, idx) => {
+        const isActive = idx === activeStoryIndex;
+        return `
+          <div onclick="selectStoryTrack(${idx})" role="listitem" class="group flex items-center justify-between gap-3 py-3 px-3 rounded-xl cursor-pointer transition ${isActive ? 'bg-[#242424]' : 'hover:bg-white/[0.04]'}">
+            <div class="flex items-center gap-3.5 min-w-0">
+              <span class="w-6 text-center text-xs font-bold ${isActive ? 'text-[#1ED760]' : 'text-[#B3B3B3] group-hover:text-white'}">
+                ${isActive ? '▶' : item.trackNo}
+              </span>
+              <img src="${item.photo}" alt="${item.title}" class="w-11 h-11 rounded-lg object-cover shrink-0" />
+              <div class="min-w-0">
+                <p class="text-xs sm:text-sm font-bold truncate ${isActive ? 'text-[#1ED760]' : 'text-white'}">${item.title}</p>
+                <p class="text-[11px] text-[#B3B3B3] truncate">${item.period}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="text-xs text-[#B3B3B3] hidden sm:inline">${item.duration}</span>
+              <span class="w-7 h-7 rounded-full ${isActive ? 'bg-[#1ED760] text-[#121212]' : 'bg-[#242424] text-white group-hover:bg-[#1ED760] group-hover:text-[#121212]'} flex items-center justify-center text-xs transition">
+                ▶
+              </span>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      renderStorySpotlight();
+    }
+
+    function renderStorySpotlight() {
+      const item = WEDDING_CONFIG.loveStory[activeStoryIndex];
+      const spotlight = document.getElementById("story-spotlight");
+      if (!item || !spotlight) return;
+
+      spotlight.innerHTML = `
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+          <img src="${item.photo}" alt="${item.title}" class="w-full sm:w-36 h-44 sm:h-36 rounded-lg object-cover shrink-0 shadow-md" />
+          <div class="space-y-2 flex-1">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-[#1ED760]/20 text-[#1ED760]">
+                Now Reading • ${item.period}
+              </span>
+              <span class="text-xs text-[#B3B3B3]">Track ${item.trackNo} / 0${WEDDING_CONFIG.loveStory.length}</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-extrabold text-white">${item.title}</h3>
+            <p class="text-xs sm:text-sm text-[#B3B3B3] leading-relaxed">${item.narrative}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectStoryTrack(idx) {
+      activeStoryIndex = idx;
+      renderLoveStorySection();
+    }
+
+    // Hero CTA "▶ Putar Cerita Kami"
+    function playOurStoryAction() {
+      scrollToElement("section-story");
+      selectStoryTrack(0);
+      if (!isPlaying) {
+        startPlayback(1); // Play romantic love story track
+      }
+      showToast("Memutar cerita cinta & musik latar 🎵");
+    }
+
+    // ========================================================================
+    // 9. GALLERY ALBUM COLLECTION & LIGHTBOX
+    // ========================================================================
+    function renderGallerySection() {
+      const carousel = document.getElementById("gallery-carousel");
+      carousel.innerHTML = WEDDING_CONFIG.gallery.map((item, idx) => `
+        <div onclick="openLightbox(${idx})" class="snap-start shrink-0 w-52 sm:w-60 bg-[#181818] hover:bg-[#242424] transition duration-300 p-3.5 rounded-2xl border border-white/[0.06] cursor-pointer group">
+          <div class="aspect-square w-full rounded-xl overflow-hidden mb-3 relative bg-[#242424] shadow-md">
+            <img src="${item.image}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/500x500/242424/1ED760?text=Album'" />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="w-11 h-11 rounded-full bg-[#1ED760] text-[#121212] flex items-center justify-center shadow-xl font-bold">
+                ⤢
+              </span>
+            </div>
+          </div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-[#1ED760] block">${item.category}</span>
+          <h3 class="text-sm font-bold text-white truncate mt-0.5">${item.title}</h3>
+          <p class="text-xs text-[#B3B3B3] line-clamp-2 mt-1">${item.caption}</p>
+        </div>
+      `).join("");
+    }
+
+    function scrollGalleryCarousel(direction) {
+      const carousel = document.getElementById("gallery-carousel");
+      if (!carousel) return;
+      carousel.scrollBy({ left: direction * 280, behavior: "smooth" });
+    }
+
+    function openLightbox(idx) {
+      activeLightboxIndex = idx;
+      updateLightboxContent();
+      const modal = document.getElementById("lightbox-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById("lightbox-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function stepLightbox(delta) {
+      const total = WEDDING_CONFIG.gallery.length;
+      activeLightboxIndex = (activeLightboxIndex + delta + total) % total;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const item = WEDDING_CONFIG.gallery[activeLightboxIndex];
+      if (!item) return;
+      document.getElementById("lightbox-img").src = item.image;
+      document.getElementById("lightbox-category").textContent = item.category;
+      document.getElementById("lightbox-title").textContent = item.title;
+      document.getElementById("lightbox-caption").textContent = item.caption;
+      document.getElementById("lightbox-counter").textContent = `${activeLightboxIndex + 1} / ${WEDDING_CONFIG.gallery.length}`;
+    }
+
+    // ========================================================================
+    // 10. SEND A GIFT CARDS & CLIPBOARD COPY
+    // ========================================================================
+    function renderGiftsSection() {
+      const container = document.getElementById("gift-cards-container");
+      container.innerHTML = WEDDING_CONFIG.gifts.map((gift, idx) => `
+        <div class="bg-[#181818] hover:bg-[#202020] transition border border-white/[0.07] rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#1ED760]/15 text-[#1ED760]">
+                ${gift.badge}
+              </span>
+              <span class="text-xs font-bold text-[#B3B3B3]">${gift.type}</span>
+            </div>
+            <h3 class="text-base font-extrabold text-white pt-1">${gift.serviceName}</h3>
+            <p class="text-sm font-mono font-bold text-[#1ED760] bg-[#121212] px-3 py-2 rounded-lg border border-white/5 select-all break-all">
+              ${gift.accountNumber}
+            </p>
+            ${gift.holderName ? `<p class="text-xs text-[#B3B3B3]">${gift.holderName}</p>` : ''}
+            ${gift.qrisImage ? `
+              <div class="pt-2">
+                <img src="${gift.qrisImage}" alt="QRIS Tanda Kasih" class="w-36 h-36 rounded-lg border border-white/10 mx-auto sm:mx-0 object-cover" />
+              </div>
+            ` : ''}
+          </div>
+
+          <button type="button" onclick="copyGiftData(${idx})" class="w-full inline-flex items-center justify-center gap-2 bg-[#242424] hover:bg-[#1ED760] text-white hover:text-[#121212] font-bold text-xs py-2.5 px-4 rounded-full border border-white/10 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>${gift.buttonLabel}</span>
+          </button>
+        </div>
+      `).join("");
+    }
+
+    function copyGiftData(idx) {
+      const gift = WEDDING_CONFIG.gifts[idx];
+      if (!gift) return;
+      copyTextToClipboard(gift.accountNumber, `${gift.type} berhasil disalin: ${gift.accountNumber}`);
+    }
+
+    function copyTextToClipboard(text, successMsg) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showToast(successMsg || "Berhasil disalin ke clipboard!");
+      } catch (err) {
+        showToast("Gagal menyalin secara otomatis, silakan salin manual.");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    // ========================================================================
+    // 11. GUESTBOOK & RSVP SPREADSHEET INTEGRATION (GOOGLE APPS SCRIPT)
+    // ========================================================================
+    function normalizeAttendanceStatus(rawStatus) {
+      if (rawStatus === undefined || rawStatus === null) return "Hadir";
+      const cleaned = String(rawStatus).trim();
+      if (!cleaned || cleaned.toLowerCase() === "undefined" || cleaned.toLowerCase() === "null") {
+        return "Hadir";
+      }
+      const lower = cleaned.toLowerCase();
+      if (lower.includes("tidak")) return "Tidak Hadir";
+      if (lower.includes("belum") || lower.includes("ragu") || lower.includes("mungkin")) return "Belum Pasti";
+      if (lower.includes("hadir")) return "Hadir";
+      return cleaned;
+    }
+
+    function normalizeRsvpItem(raw, idx = 0) {
+      if (!raw || typeof raw !== "object") {
+        return {
+          id: `ROW-${idx}`,
+          name: "Tamu Undangan",
+          status: "Hadir",
+          pax: 1,
+          message: "",
+          timeLabel: ""
+        };
+      }
+
+      // Mendukung berbagai kemungkinan nama properti/header dari Google Spreadsheet
+      const rawName =
+        raw.name ??
+        raw.nama ??
+        raw["Nama Tamu"] ??
+        raw["Nama"] ??
+        "Tamu Undangan";
+
+      const rawStatus =
+        raw.status ??
+        raw.kehadiran ??
+        raw.attendance ??
+        raw.konfirmasi ??
+        raw.statusKehadiran ??
+        raw["Status Kehadiran"] ??
+        raw["Kehadiran"] ??
+        raw["Konfirmasi Kehadiran"] ??
+        "Hadir";
+
+      const normalizedStatus = normalizeAttendanceStatus(rawStatus);
+
+      const rawPax =
+        raw.pax ??
+        raw.jumlah ??
+        raw.jumlahTamu ??
+        raw["Jumlah Tamu (Orang)"] ??
+        raw["Jumlah Tamu"] ??
+        (normalizedStatus === "Hadir" ? 1 : 0);
+
+      const rawMessage =
+        raw.message ??
+        raw.pesan ??
+        raw.ucapan ??
+        raw.doa ??
+        raw["Pesan & Doa"] ??
+        raw["Pesan"] ??
+        raw["Ucapan"] ??
+        "";
+
+      const rawTime =
+        raw.timeLabel ??
+        raw.timestamp ??
+        raw.waktu ??
+        raw.date ??
+        raw["Waktu Pengiriman (WIB)"] ??
+        raw["Waktu"] ??
+        "";
+
+      return {
+        id: String(raw.id ?? raw["ID RSVP"] ?? `ROW-${idx}`),
+        name: String(rawName || "Tamu Undangan").trim(),
+        status: normalizedStatus,
+        pax: normalizedStatus === "Hadir" ? Math.max(1, parseInt(rawPax, 10) || 1) : 0,
+        message: String(rawMessage || "").trim(),
+        timeLabel:
+          rawTime && String(rawTime).toLowerCase() !== "undefined"
+            ? String(rawTime).trim()
+            : ""
+      };
+    }
+
+    function isSpreadsheetConfigured() {
+      const endpoint = (WEDDING_CONFIG.rsvpConfig.backendEndpoint || "https://script.google.com/macros/s/AKfycbx2XPJgeAkAjY9jfTGDzkbB575QM9o8dzictTYF4T2Gv-Z25w0V6EM5G9Or5HbDaidh/exec").trim();
+      return endpoint.startsWith("https://script.google.com/macros/s/");
+    }
+
+    function initSpreadsheetSync() {
+      if (!isSpreadsheetConfigured()) return;
+
+      // Load initial live data from Google Spreadsheet
+      loadRsvpFromSpreadsheet(false);
+
+      // Periodically sync so rows deleted in Google Spreadsheet disappear automatically
+      const intervalMs = WEDDING_CONFIG.rsvpConfig.autoSyncIntervalMs || 15000;
+      setInterval(() => {
+        if (!document.hidden) {
+          loadRsvpFromSpreadsheet(false);
+        }
+      }, intervalMs);
+
+      // Also sync immediately when user returns to the browser tab
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
+          loadRsvpFromSpreadsheet(false);
+        }
+      });
+    }
+
+    async function loadRsvpFromSpreadsheet(showNotification = false) {
+      if (!isSpreadsheetConfigured() || isFetchingRsvp) {
+        if (showNotification && !isSpreadsheetConfigured()) {
+          showToast("Masukkan URL Web App Google Apps Script di WEDDING_CONFIG terlebih dahulu.");
+        }
+        return;
+      }
+
+      isFetchingRsvp = true;
+      const syncIndicator = document.getElementById("rsvp-sync-indicator");
+      if (syncIndicator) syncIndicator.textContent = "⟳ Menyinkronkan...";
+
+      try {
+        const endpoint = WEDDING_CONFIG.rsvpConfig.backendEndpoint.trim();
+        const separator = endpoint.includes("?") ? "&" : "?";
+        const url = `${endpoint}${separator}action=get&t=${Date.now()}`;
+
+        const response = await fetch(url, {
+          method: "GET",
+          redirect: "follow"
+        });
+
+        if (!response.ok) throw new Error("Gagal mengambil data dari Spreadsheet");
+        const result = await response.json();
+
+        const rawList = Array.isArray(result)
+          ? result
+          : Array.isArray(result?.data)
+          ? result.data
+          : null;
+
+        if (rawList) {
+          // Normalisasi setiap baris agar status tidak pernah bernilai undefined
+          rsvpMessages = rawList
+            .map((item, idx) => normalizeRsvpItem(item, idx))
+            .filter(item => item.name && item.message);
+          renderRsvpFeed();
+          if (showNotification) {
+            showToast("Data ucapan telah disinkronkan dengan Spreadsheet ✓");
+          }
+        }
+      } catch (err) {
+        if (showNotification) {
+          showToast("Gagal menyinkronkan data dari Spreadsheet.");
+        }
+      } finally {
+        isFetchingRsvp = false;
+        if (syncIndicator) syncIndicator.textContent = "↻ Sinkronkan Data";
+      }
+    }
+
+    function toggleGuestCountField() {
+      const status = document.getElementById("rsvp-status").value;
+      const wrapper = document.getElementById("rsvp-pax-wrapper");
+      if (status === "Hadir") {
+        wrapper.classList.remove("hidden");
+      } else {
+        wrapper.classList.add("hidden");
+      }
+    }
+
+    async function handleRsvpSubmit(event) {
+      event.preventDefault();
+      const nameInput = document.getElementById("rsvp-name");
+      const statusInput = document.getElementById("rsvp-status");
+      const paxInput = document.getElementById("rsvp-pax");
+      const msgInput = document.getElementById("rsvp-message");
+      const submitBtn = document.getElementById("rsvp-submit-btn");
+
+      const name = nameInput.value.trim();
+      const status = statusInput.value;
+      const pax = status === "Hadir" ? parseInt(paxInput.value, 10) || 1 : 0;
+      const message = msgInput.value.trim();
+
+      // Input validation
+      if (name.length < 2) {
+        showRsvpFeedback("Mohon isi nama lengkap Anda (minimal 2 karakter).", true);
+        nameInput.focus();
+        return;
+      }
+      if (message.length < 4) {
+        showRsvpFeedback("Mohon tuliskan pesan atau doa untuk kedua mempelai.", true);
+        msgInput.focus();
+        return;
+      }
+
+      // Prevent rapid duplicate submissions
+      const now = Date.now();
+      if (now - lastRsvpSubmitTimestamp < 4000) {
+        showRsvpFeedback("Mohon tunggu beberapa detik sebelum mengirim ucapan kembali.", true);
+        return;
+      }
+      const isDuplicate = rsvpMessages.some(
+        m => m.name.toLowerCase() === name.toLowerCase() && m.message.toLowerCase() === message.toLowerCase()
+      );
+      if (isDuplicate) {
+        showRsvpFeedback("Ucapan yang sama dari Anda sudah tercatat di daftar ucapan.", true);
+        return;
+      }
+
+      if (!isSpreadsheetConfigured()) {
+        showRsvpFeedback(
+          "URL Web App Spreadsheet belum dipasang pada WEDDING_CONFIG.rsvpConfig.backendEndpoint.",
+          true
+        );
+        return;
+      }
+
+      lastRsvpSubmitTimestamp = now;
+      const payload = {
+        action: "insert",
+        name,
+        status,
+        kehadiran: status,
+        pax,
+        message
+      };
+
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "<span>Mengirim ke Spreadsheet...</span>";
+
+      try {
+        const endpoint = WEDDING_CONFIG.rsvpConfig.backendEndpoint.trim();
+        // Gunakan text/plain agar terhindar dari blokir CORS Preflight (OPTIONS) pada Google Apps Script di hosting pribadi
+        const res = await fetch(endpoint, {
+          method: "POST",
+          redirect: "follow",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) throw new Error("Server error");
+        const result = await res.json();
+
+        if (result && (result.status === "success" || result.result === "success" || Array.isArray(result.data))) {
+          if (Array.isArray(result.data) && result.data.length > 0) {
+            rsvpMessages = result.data
+              .map((item, idx) => normalizeRsvpItem(item, idx))
+              .filter(item => item.name && item.message);
+            renderRsvpFeed();
+          } else {
+            // Tambahkan secara instan dengan status yang baru dipilih tamu lalu sinkronkan
+            rsvpMessages.unshift(
+              normalizeRsvpItem({
+                id: `RSVP-${Date.now()}`,
+                name,
+                status,
+                pax,
+                message,
+                timeLabel: "Baru saja"
+              })
+            );
+            renderRsvpFeed();
+            await loadRsvpFromSpreadsheet(false);
+          }
+          msgInput.value = "";
+          showRsvpFeedback("Terima kasih! Konfirmasi kehadiran & ucapan Anda telah tersimpan.", false);
+          showToast("Ucapan berhasil terkirim! ♥");
+        } else {
+          throw new Error(result?.message || "Gagal menyimpan data");
+        }
+      } catch (err) {
+        showRsvpFeedback("Gagal mengirim ucapan ke Spreadsheet. Pastikan URL Web App Google Apps Script sudah benar dan memiliki akses 'Anyone / Siapa saja'.", true);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
+
+    function showRsvpFeedback(text, isError) {
+      const box = document.getElementById("rsvp-feedback");
+      box.className = `text-xs font-medium px-3.5 py-2.5 rounded-lg ${
+        isError
+          ? "bg-rose-500/20 text-rose-300 border border-rose-500/40"
+          : "bg-[#1ED760]/15 text-[#1ED760] border border-[#1ED760]/30"
+      }`;
+      box.textContent = text;
+      box.classList.remove("hidden");
+    }
+
+    function renderRsvpFeed() {
+      const feedEl = document.getElementById("rsvp-feed-list");
+      const totalEl = document.getElementById("rsvp-total-count");
+      const hadirEl = document.getElementById("stat-hadir");
+      const belumEl = document.getElementById("stat-belum");
+      const tidakEl = document.getElementById("stat-tidak");
+
+      const normalizedList = rsvpMessages.map((m, idx) => normalizeRsvpItem(m, idx));
+
+      totalEl.textContent = normalizedList.length;
+      hadirEl.textContent = normalizedList.filter(m => m.status === "Hadir").length;
+      belumEl.textContent = normalizedList.filter(m => m.status === "Belum Pasti").length;
+      tidakEl.textContent = normalizedList.filter(m => m.status === "Tidak Hadir").length;
+
+      if (normalizedList.length === 0) {
+        feedEl.innerHTML = `
+          <div class="bg-[#242424]/60 rounded-xl p-5 text-center border border-white/[0.04]">
+            <p class="text-xs text-[#B3B3B3]">Belum ada ucapan yang ditampilkan. Jadilah yang pertama mengirimkan doa &amp; konfirmasi kehadiran.</p>
+          </div>
+        `;
+        return;
+      }
+
+      feedEl.innerHTML = normalizedList.map(item => {
+        const safeStatus = normalizeAttendanceStatus(item.status);
+        const badgeColor =
+          safeStatus === "Hadir"
+            ? "bg-[#1ED760]/15 text-[#1ED760] border-[#1ED760]/30"
+            : safeStatus === "Belum Pasti"
+            ? "bg-amber-500/15 text-amber-300 border-amber-500/30"
+            : "bg-rose-500/15 text-rose-300 border-rose-500/30";
+
+        return `
+          <div class="bg-[#242424] rounded-xl p-3.5 border border-white/[0.05] space-y-1.5">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#1ED760]/20 text-[#1ED760] font-bold text-xs flex items-center justify-center">
+                  ${escapeHtml((item.name || "T").charAt(0).toUpperCase())}
+                </span>
+                <span class="text-xs sm:text-sm font-bold text-white">${escapeHtml(item.name)}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${badgeColor}">
+                  ${escapeHtml(safeStatus)}${safeStatus === "Hadir" && item.pax ? ` • ${item.pax} Org` : ""}
+                </span>
+                <span class="text-[10px] text-[#727272]">${escapeHtml(item.timeLabel || "")}</span>
+              </div>
+            </div>
+            <p class="text-xs text-[#B3B3B3] leading-relaxed pl-8">${escapeHtml(item.message)}</p>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function escapeHtml(str) {
+      if (str === undefined || str === null || str === "undefined" || str === "null") {
+        return "";
+      }
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    // ========================================================================
+    // 12. WEDDING MUSIC PLAYER ENGINE (WEB AUDIO SYNTH + EXTERNAL AUDIO)
+    // ========================================================================
+    function renderPlaylistSection() {
+      const container = document.getElementById("wedding-playlist-items");
+      const queueContainer = document.getElementById("np-queue-list");
+
+      const html = WEDDING_CONFIG.playlist.map((track, idx) => {
+        const active = idx === currentTrackIndex;
+        return `
+          <div onclick="startPlayback(${idx})" class="flex items-center justify-between gap-3 p-2.5 rounded-xl cursor-pointer transition ${active ? 'bg-[#242424] border border-[#1ED760]/30' : 'hover:bg-white/[0.05]'}">
+            <div class="flex items-center gap-3 min-w-0">
+              <img src="${track.cover}" alt="${track.title}" class="w-11 h-11 rounded-lg object-cover shrink-0" />
+              <div class="min-w-0">
+                <p class="text-xs sm:text-sm font-bold truncate ${active ? 'text-[#1ED760]' : 'text-white'}">${track.title}</p>
+                <p class="text-[11px] text-[#B3B3B3] truncate">${track.contextLabel} • ${track.artist}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0">
+              <span class="text-xs text-[#B3B3B3]">${track.durationFormatted}</span>
+              <span class="w-8 h-8 rounded-full ${active && isPlaying ? 'bg-[#1ED760] text-[#121212]' : 'bg-[#242424] text-white'} flex items-center justify-center text-xs font-bold">
+                ${active && isPlaying ? '❚❚' : '▶'}
+              </span>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      if (container) container.innerHTML = html;
+      if (queueContainer) queueContainer.innerHTML = html;
+    }
+
+    function ensureAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+          masterGainNode = audioCtx.createGain();
+          masterGainNode.gain.value = isMuted ? 0 : currentVolume * 0.25;
+          masterGainNode.connect(audioCtx.destination);
+        }
+      }
+      if (audioCtx && audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+    }
+
+    // Plays soft romantic acoustic/piano arpeggio notes using Web Audio API
+    function triggerRomanticChordNote() {
+      if (!isPlaying || isMuted || !audioCtx || !masterGainNode) return;
+      const track = WEDDING_CONFIG.playlist[currentTrackIndex];
+      if (!track || track.audioUrl) return; // If external audioUrl is used, HTML5 audio handles sound
+
+      const notes = track.notes || [261.63, 329.63, 392.00, 523.25];
+      const freq = notes[noteStepCounter % notes.length];
+      noteStepCounter++;
+
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const noteGain = audioCtx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, now);
+
+      // Gentle bell/piano envelope
+      noteGain.gain.setValueAtTime(0.001, now);
+      noteGain.gain.exponentialRampToValueAtTime(0.32, now + 0.08);
+      noteGain.gain.exponentialRampToValueAtTime(0.0008, now + 1.45);
+
+      osc.connect(noteGain);
+      noteGain.connect(masterGainNode);
+
+      osc.start(now);
+      osc.stop(now + 1.5);
+    }
+
+    function startPlayback(trackIdx = currentTrackIndex) {
+      const externalAudio = document.getElementById("external-audio-element");
+      if (trackIdx !== currentTrackIndex) {
+        currentTrackIndex = trackIdx;
+        currentElapsedSeconds = 0;
+        noteStepCounter = 0;
+      }
+
+      const track = WEDDING_CONFIG.playlist[currentTrackIndex];
+      isPlaying = true;
+
+      // Check if track has an external audio file configured
+      if (track.audioUrl && track.audioUrl.trim().length > 0) {
+        stopSynthScheduler();
+        if (externalAudio.src !== track.audioUrl) {
+          externalAudio.src = track.audioUrl;
+        }
+        externalAudio.muted = isMuted;
+        externalAudio.volume = currentVolume;
+        externalAudio.play().catch(() => {
+          showToast("File audio eksternal gagal dimuat, beralih ke melodi akustik bawaan.");
+          track.audioUrl = "";
+          startSynthScheduler();
+        });
+      } else {
+        externalAudio.pause();
+        ensureAudioContext();
+        startSynthScheduler();
+      }
+
+      startProgressTicker();
+      updatePlayerUI();
+      renderPlaylistSection();
+    }
+
+    function pausePlayback() {
+      isPlaying = false;
+      const externalAudio = document.getElementById("external-audio-element");
+      externalAudio.pause();
+      stopSynthScheduler();
+      stopProgressTicker();
+      updatePlayerUI();
+      renderPlaylistSection();
+    }
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        pausePlayback();
+      } else {
+        startPlayback(currentTrackIndex);
+      }
+    }
+
+    function startSynthScheduler() {
+      stopSynthScheduler();
+      triggerRomanticChordNote();
+      noteScheduleTimer = setInterval(triggerRomanticChordNote, 650);
+    }
+
+    function stopSynthScheduler() {
+      if (noteScheduleTimer) {
+        clearInterval(noteScheduleTimer);
+        noteScheduleTimer = null;
+      }
+    }
+
+    function startProgressTicker() {
+      stopProgressTicker();
+      playbackInterval = setInterval(() => {
+        if (!isPlaying) return;
+        const track = WEDDING_CONFIG.playlist[currentTrackIndex];
+        currentElapsedSeconds += 1;
+        if (currentElapsedSeconds >= track.durationSeconds) {
+          if (isRepeat) {
+            nextTrack();
+          } else {
+            pausePlayback();
+            currentElapsedSeconds = 0;
+          }
+        }
+        updatePlayerUI();
+      }, 1000);
+    }
+
+    function stopProgressTicker() {
+      if (playbackInterval) {
+        clearInterval(playbackInterval);
+        playbackInterval = null;
+      }
+    }
+
+    function nextTrack() {
+      const total = WEDDING_CONFIG.playlist.length;
+      if (isShuffle && total > 1) {
+        let nextIdx = currentTrackIndex;
+        while (nextIdx === currentTrackIndex) {
+          nextIdx = Math.floor(Math.random() * total);
+        }
+        currentTrackIndex = nextIdx;
+      } else {
+        currentTrackIndex = (currentTrackIndex + 1) % total;
+      }
+      currentElapsedSeconds = 0;
+      if (isPlaying) {
+        startPlayback(currentTrackIndex);
+      } else {
+        updatePlayerUI();
+        renderPlaylistSection();
+      }
+    }
+
+    function prevTrack() {
+      if (currentElapsedSeconds > 5) {
+        currentElapsedSeconds = 0;
+        updatePlayerUI();
+        return;
+      }
+      const total = WEDDING_CONFIG.playlist.length;
+      currentTrackIndex = (currentTrackIndex - 1 + total) % total;
+      currentElapsedSeconds = 0;
+      if (isPlaying) {
+        startPlayback(currentTrackIndex);
+      } else {
+        updatePlayerUI();
+        renderPlaylistSection();
+      }
+    }
+
+    function skipSeconds(delta) {
+      const track = WEDDING_CONFIG.playlist[currentTrackIndex];
+      currentElapsedSeconds = Math.max(0, Math.min(track.durationSeconds - 1, currentElapsedSeconds + delta));
+      updatePlayerUI();
+    }
+
+    function seekAudioByPercentage(pct) {
+      const track = WEDDING_CONFIG.playlist[currentTrackIndex];
+      currentElapsedSeconds = Math.floor(( Number(pct) / 100 ) * track.durationSeconds);
+      updatePlayerUI();
+    }
+
+    function changeVolume(val) {
+      currentVolume = Number(val) / 100;
+      isMuted = currentVolume === 0;
+      if (masterGainNode && audioCtx) {
+        masterGainNode.gain.setValueAtTime(isMuted ? 0 : currentVolume * 0.25, audioCtx.currentTime);
+      }
+      const externalAudio = document.getElementById("external-audio-element");
+      externalAudio.volume = currentVolume;
+      externalAudio.muted = isMuted;
+      updatePlayerUI();
+    }
+
+    function toggleMuteAudio() {
+      isMuted = !isMuted;
+      if (masterGainNode && audioCtx) {
+        masterGainNode.gain.setValueAtTime(isMuted ? 0 : currentVolume * 0.25, audioCtx.currentTime);
+      }
+      const externalAudio = document.getElementById("external-audio-element");
+      externalAudio.muted = isMuted;
+      updatePlayerUI();
+      showToast(isMuted ? "Musik dibisukan (Muted)" : "Musik diaktifkan");
+    }
+
+    function toggleShuffle() {
+      isShuffle = !isShuffle;
+      const btn = document.getElementById("np-shuffle-btn");
+      btn.className = `p-2 transition ${isShuffle ? 'text-[#1ED760]' : 'text-[#B3B3B3] hover:text-white'}`;
+      showToast(isShuffle ? "Mode Shuffle Aktif" : "Mode Shuffle Nonaktif");
+    }
+
+    function toggleRepeat() {
+      isRepeat = !isRepeat;
+      const btn = document.getElementById("np-repeat-btn");
+      btn.className = `p-2 transition ${isRepeat ? 'text-[#1ED760]' : 'text-[#B3B3B3] hover:text-white'}`;
+      showToast(isRepeat ? "Repeat Playlist Aktif" : "Repeat Nonaktif");
+    }
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${String(s).padStart(2, "0")}`;
+    }
+
+    function updatePlayerUI() {
+      const track = WEDDING_CONFIG.playlist[currentTrackIndex];
+      if (!track) return;
+
+      const pct = Math.min(100, (currentElapsedSeconds / track.durationSeconds) * 100);
+
+      // Update Mini-Player
+      document.getElementById("mini-cover").src = track.cover;
+      document.getElementById("mini-title").textContent = track.title;
+      document.getElementById("mini-artist").textContent = track.artist;
+      document.getElementById("mini-progress-fill").style.width = `${pct}%`;
+
+      const miniEq = document.getElementById("mini-eq");
+      if (isPlaying && !isMuted) {
+        miniEq.classList.remove("eq-paused");
+      } else {
+        miniEq.classList.add("eq-paused");
+      }
+
+      const playSvg = '<path d="M8 5v14l11-7z"/>';
+      const pauseSvg = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+      document.getElementById("mini-play-icon").innerHTML = isPlaying ? pauseSvg : playSvg;
+      document.getElementById("np-play-icon").innerHTML = isPlaying ? pauseSvg : playSvg;
+
+      // Update Full Now Playing Modal
+      document.getElementById("np-cover").src = track.cover;
+      document.getElementById("np-title").textContent = track.title;
+      document.getElementById("np-artist").textContent = track.artist;
+      document.getElementById("np-context").textContent = track.contextLabel;
+      document.getElementById("np-current-time").textContent = formatTime(currentElapsedSeconds);
+      document.getElementById("np-duration").textContent = track.durationFormatted;
+      document.getElementById("np-progress-slider").value = pct;
+      document.getElementById("np-mute-label").textContent = isMuted ? "🔇" : "🔊";
+
+      // Update Top Header Mute Icon
+      const headerVolIcon = document.getElementById("header-vol-icon");
+      if (headerVolIcon) {
+        headerVolIcon.innerHTML = isMuted
+          ? '<path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/>'
+          : '<path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/>';
+      }
+    }
+
+    function handleMiniPlayerClick(event) {
+      openNowPlayingModal();
+    }
+
+    function openNowPlayingModal() {
+      const modal = document.getElementById("now-playing-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeNowPlayingModal() {
+      const modal = document.getElementById("now-playing-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    // ========================================================================
+    // 13. BOTTOM NAVIGATION, CATEGORY PILLS & SEARCH ENGINE
+    // ========================================================================
+    function handleBottomNav(tab) {
+      // Update active state styling on bottom nav
+      document.querySelectorAll(".bottom-nav-item").forEach(btn => {
+        if (btn.dataset.nav === tab) {
+          btn.classList.remove("text-[#B3B3B3]");
+          btn.classList.add("text-white");
+        } else {
+          btn.classList.add("text-[#B3B3B3]");
+          btn.classList.remove("text-white");
+        }
+      });
+
+      if (tab === "search") {
+        openSearchPanel();
+        return;
+      }
+
+      closeSearchPanel();
+      filterByCategory("all", false);
+
+      if (tab === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else if (tab === "library") {
+        scrollToElement("section-story");
+      } else if (tab === "wedding") {
+        scrollToElement("section-events");
+      }
+    }
+
+    function filterByCategory(category, shouldScroll = true) {
+      closeSearchPanel();
+
+      // Update Category Pills Active State
+      document.querySelectorAll(".cat-pill").forEach(pill => {
+        if (pill.dataset.pill === category) {
+          pill.className = "cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#1ED760] text-[#121212]";
+        } else {
+          pill.className = "cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#242424] text-white hover:bg-[#2A2A2A]";
+        }
+      });
+
+      const sections = document.querySelectorAll("#main-content > section");
+      sections.forEach(sec => {
+        const secCat = sec.dataset.category;
+        if (category === "all" || secCat === category) {
+          sec.classList.remove("hidden");
+        } else {
+          sec.classList.add("hidden");
+        }
+      });
+
+      if (shouldScroll) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    function openSearchPanel() {
+      const panel = document.getElementById("search-panel");
+      panel.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      const input = document.getElementById("search-input");
+      setTimeout(() => input.focus(), 150);
+      handleSearchQuery(input.value);
+    }
+
+    function closeSearchPanel() {
+      document.getElementById("search-panel").classList.add("hidden");
+    }
+
+    function clearSearchInput() {
+      const input = document.getElementById("search-input");
+      input.value = "";
+      handleSearchQuery("");
+      input.focus();
+    }
+
+    function jumpFromSearch(sectionId) {
+      closeSearchPanel();
+      filterByCategory("all", false);
+      scrollToElement(sectionId);
+    }
+
+    function handleSearchQuery(query) {
+      const q = query.trim().toLowerCase();
+      const clearBtn = document.getElementById("clear-search-btn");
+      const resultsEl = document.getElementById("search-results-list");
+
+      if (q.length > 0) {
+        clearBtn.classList.remove("hidden");
+      } else {
+        clearBtn.classList.add("hidden");
+        resultsEl.innerHTML = "";
+        return;
+      }
+
+      const indexItems = [
+        { title: `${WEDDING_CONFIG.couple.groom.fullName}`, type: "Mempelai Pria", target: "section-artists" },
+        { title: `${WEDDING_CONFIG.couple.bride.fullName}`, type: "Mempelai Wanita", target: "section-artists" },
+        ...WEDDING_CONFIG.events.map(e => ({ title: `${e.trackHeading} — ${e.venueName}`, type: `${e.dayDate} • ${e.timeRange}`, target: "section-events" })),
+        ...WEDDING_CONFIG.loveStory.map(s => ({ title: s.title, type: `Cerita Cinta • ${s.period}`, target: "section-story" })),
+        ...WEDDING_CONFIG.playlist.map((p, i) => ({ title: p.title, type: `Lagu Playlist • ${p.artist}`, target: "section-playlist", playIdx: i })),
+        { title: "Transfer Bank, E-Wallet & Alamat Kado", type: "Send a Gift", target: "section-gift" },
+        { title: "Konfirmasi Kehadiran (RSVP) & Ucapan", type: "Guestbook", target: "section-rsvp" }
+      ];
+
+      const matches = indexItems.filter(
+        item => item.title.toLowerCase().includes(q) || item.type.toLowerCase().includes(q)
+      );
+
+      if (matches.length === 0) {
+        resultsEl.innerHTML = `<p class="text-xs text-[#B3B3B3] py-2">Tidak ditemukan hasil untuk "${escapeHtml(query)}".</p>`;
+        return;
+      }
+
+      resultsEl.innerHTML = matches.map(m => `
+        <button type="button" onclick="${m.playIdx !== undefined ? `startPlayback(${m.playIdx});` : ''} jumpFromSearch('${m.target}')" class="w-full bg-[#181818] hover:bg-[#242424] p-3 rounded-xl flex items-center justify-between text-left border border-white/5 transition">
+          <div>
+            <p class="text-xs sm:text-sm font-bold text-white">${escapeHtml(m.title)}</p>
+            <p class="text-[11px] text-[#1ED760]">${escapeHtml(m.type)}</p>
+          </div>
+          <span class="text-xs text-[#B3B3B3]">Buka →</span>
+        </button>
+      `).join("");
+    }
+
+    function navigateToSection(sectionKey, event) {
+      if (event) event.preventDefault();
+      filterByCategory("all", false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function scrollToElement(id) {
+      filterByCategory("all", false);
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    // ========================================================================
+    // TOAST & KEYBOARD NAVIGATION HELPERS
+    // ========================================================================
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById("toast-notification");
+      const text = document.getElementById("toast-message");
+      text.textContent = message;
+      toast.classList.remove("hidden");
+      toast.classList.add("flex");
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add("hidden");
+        toast.classList.remove("flex");
+      }, 2800);
+    }
+
+    function setupKeyboardShortcuts() {
+      window.addEventListener("keydown", e => {
+        const lightboxOpen = !document.getElementById("lightbox-modal").classList.contains("hidden");
+        if (lightboxOpen) {
+          if (e.key === "Escape") closeLightbox();
+          if (e.key === "ArrowRight") stepLightbox(1);
+          if (e.key === "ArrowLeft") stepLightbox(-1);
+        }
+      });
+    }
+
+    function initApp() {
+      initGuestFromUrl();
+      renderStaticMetadata();
+      renderHomeQuickCards();
+      renderArtistsSection();
+      renderEventsSection();
+      startCountdownTimer();
+      renderLoveStorySection();
+      renderGallerySection();
+      renderGiftsSection();
+      renderRsvpFeed();
+      initSpreadsheetSync();
+      renderPlaylistSection();
+      updatePlayerUI();
+      setupKeyboardShortcuts();
+    }
+
+    document.addEventListener("DOMContentLoaded", initApp);
+  </script>
+</body>
+</html>
